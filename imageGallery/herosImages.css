@@ -1,40 +1,19 @@
+.images{
+    /* used on every image - using flex display (could maybe use grid if this sucks?)*/
+    display:flex;
+    flex-wrap:wrap;
+    width:100%;
+}
+.column{
+    flex:25%;
+}
+.column img{
+    margin-top: 5px;
+}
 img{
-    width:20%;
+    width:100%;
     border: 5px solid #957695;
     border-radius: 10%;
-    position:relative;
+    position:relative; 
 }
 
-
-.Michael_Stewart{
-    top:-40px;
-    left:20px;
-    z-index:30;
-}
-.Rachel_Barrow{
-    z-index:35;
-    left:-290px;
-    top:70px;
-}
-.Annabell_Stephens{
-    left:-475px;
-    top:300px;
-    z-index: 35;
-}
-.Patricia_Richeson{
-    top:-50px;
-}
-.Paticia_Todd{
-    left:-525px;
-    top:140px;
-    z-index:32;
-}
-.David_Vandergriff{
-    top:-20px;
-    left:20px;
-}
-.David_Miller{
-    top:350px;
-    left:-775px;
-    z-index:33;
-}
