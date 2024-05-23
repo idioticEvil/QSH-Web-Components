@@ -1,0 +1,1 @@
+This repository will be used for the creation and sharing of web components designed for use with the website for the Queer Southern History project from the Summersell Center at the University of Alabama.
