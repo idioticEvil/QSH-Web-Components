@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="DoubleBoxNoBound.css">
+        <link rel="stylesheet" href="DoubleBoxBounded.css">
+        <link rel="stylesheet" href="Sawtooth.css">
+    </head>
+
+    <style>
+        .image {
+            position: relative;
+            filter: brightness(40%) grayscale(80%);
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 90%;
+            width: 90%;
+        }
+
+        .textContainer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: white;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        p {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+
+    <body>
+        <div class="container">
+            <div class="DoubleBoxBounded">
+                <div class="textContainer">
+                    <h1>Southern Queer History</h1>
+                    <p>HY 306-002<br>Fall 2021<br>T/TH 12:30-1:45 PM</p>
+                    <p>queerhistory.as.ua.edu</p>
+                    <p>No Course Prerequisites</p>
+                </div>
+            </div>
+            <img src="https://queerhistory.as.ua.edu/wp-content/uploads/2024/05/testerImage.jpeg" alt="Queer History" class="image">
+    </body>
+</html>

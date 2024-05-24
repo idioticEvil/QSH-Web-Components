@@ -4,12 +4,15 @@
     flex-wrap:wrap;
     width:100%;
 }
+
 .column{
     flex:25%;
 }
+
 .column img{
     margin-top: 5px;
 }
+
 img{
     width:100%;
     border: 5px solid #957695;

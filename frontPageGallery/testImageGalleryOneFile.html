@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Yeseva+One&display=swap" rel="stylesheet">
+    </head>
+    
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: 'Caudex', serif;
+            color: white;
+        }
+    
+        .frame {
+            width: calc(100% - 40px);
+            height: calc(100% - 40px); 
+            padding: 0px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            bottom: 20px; 
+            left: 20px;
+            text-align: center;
+            z-index: 1;
+        }
+    
+        .frame::before, .frame::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border: 5px solid #957695;
+            pointer-events: none;
+        }
+    
+        .frame::before {
+            margin: 0px 20px 0px 20px;
+        }
+    
+        .frame::after {
+            margin: 20px 0px 20px 0px;
+        }
+    
+        .image {
+            position: relative;
+            filter: brightness(40%) grayscale(80%);
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    
+        .container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+        }
+    
+        .textContainer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+        }
+    
+        .h1 {
+            font-size: 24px;
+            margin: 10px 0;
+            font-family: "Yeseva One", serif;
+        }
+    
+        .p {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+
+    <body>
+        <div class="container">
+            <div class="frame">
+                <div class="textContainer">
+                    <h1>Southern Queer History</h1>
+                    <p>HY 306-002<br>Fall 2021<br>T/TH 12:30-1:45 PM</p>
+                    <p>queerhistory.as.ua.edu</p>
+                    <p>No Course Prerequisites</p>
+                </div>
+            </div>
+            <img src="https://queerhistory.as.ua.edu/wp-content/uploads/2024/05/testerImage.jpeg" alt="Queer History" class="image">
+        </div>
+    </body>
+</html>
