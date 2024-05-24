@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Yeseva+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    
+    <style>
+        body, .textContainer {
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 0;
+            color: white;
+        }
+    
+        .image {
+            position: relative;
+            filter: brightness(40%) grayscale(80%);
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    
+        .container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+        }
+    
+        .textContainer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+        }
+    
+        h2, .textContainer {
+            font-size: 2em;
+            padding-horizontal: 1;
+            font-family: "Yeseva One", serif;
+        }
+    
+        p, .textContainer {
+            font-family: "Caudex", serif;
+            font-size: 14px;
+        }
+    </style>
+
+    <body>
+        <div class="container">
+            <div class="frame">
+                <div class="textContainer">
+                    <h2>Southern Queer History</h2>
+                    <p>HY 306-002<br>Fall 2021<br>T/TH 12:30-1:45 PM</p>
+                    <p>queerhistory.as.ua.edu</p>
+                    <p>No Course Prerequisites</p>
+                </div>
+            </div>
+            <img src="https://queerhistory.as.ua.edu/wp-content/uploads/2024/05/testerImage.jpeg" alt="Queer History" class="image">
+        </div>
+    </body>
+</html>

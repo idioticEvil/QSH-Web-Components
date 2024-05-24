@@ -1,8 +1,9 @@
 /* 
-This class provides us with the double frame overlap style from
-that one really nice poster that Isabella made. The base version
-is only intended to be used in "unbounded" contexts, like the 
-landing page gallery. Otherwise the bounded version should be used.
+This double frame class provides us with the double frame overlap 
+style from that one really nice poster that Isabella made. The base 
+version is only intended to be used in "unbounded" contexts, like 
+the landing page gallery. Otherwise the bounded version should be 
+used.
 */
 @mixin double-frame {
     width: calc(100% - 40px);
