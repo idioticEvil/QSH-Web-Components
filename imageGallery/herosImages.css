@@ -1,22 +1,22 @@
 .images{
     /* used on every image - using flex display (could maybe use grid if this sucks?)*/
     display:flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     width:100%;
+    align-items: center;
 }
-
 .column{
     flex:25%;
 }
-
-.column img{
-    margin-top: 5px;
+.column img:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+    z-index: 200;
 }
-
 img{
     width:100%;
+    height:auto;
     border: 5px solid #957695;
-    border-radius: 10%;
+    border-radius: 5%;
     position:relative; 
 }
-
