@@ -10,11 +10,34 @@
       <div class="column">
         <img src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/David-Van-der-Griff.jpg">
         <img src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/Dr.-AStephens.jpg">
-        <img src="https://queerhistory.as.ua.edu/wp-content/uploads/2020/05/patricia-todd.jpg">  
       </div>
       <div class="column">
         <img src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/David-Miller-scaled.jpg">
         <img src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/pat-richeson.jpg">
       </div>
     </div>
+    <!-- anything below should be the same as herosImages.css, just put here to make embedding easier-->
+    <style>
+      .images{
+        display:flex;
+        flex-wrap: wrap;
+        width:100%;
+        align-items: center;
+      }
+      .column{
+          flex:25%;
+      }
+      .column img:hover{
+          transform: scale(1.1);
+          transition: 0.5s;
+          z-index: 200;
+      }
+      img{
+          width:100%;
+          height:auto;
+          border: 5px solid #957695;
+          border-radius: 5%;
+          position:relative; 
+      }
+    </style>
 </html>
