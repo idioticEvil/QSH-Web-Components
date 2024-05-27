@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlapping Squares</title>
+    <style>
+        :root{
+            --original-width:60%;
+            --original-height: fit-content;
+            --offset:5%;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            display:grid;
+            place-items:center;
+        }
+
+        .square {
+            position: absolute;
+            background-color: #DCC2DC;
+            border: 5px solid #4D634D;
+        }
+
+        .square3 {
+            height:var(--original-height);
+            width:var(--original-width);
+            z-index:10;
+        }
+
+        .square2 {
+            width:calc(var(--original-width) - var(--offset));
+            height:calc(var(--original-height) + var(--offset));
+            z-index:11;
+        }
+
+        .squareBase {
+            width:calc(var(--original-width) - 2*var(--offset));
+            height:calc(var(--original-height) + 2*var(--offset));
+            z-index:12;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="square square3"></div>
+        <div class="square square2"></div>
+        <div class="square squareBase">heres my text!!</div>
+    </div>
+</body>
+</html>
