@@ -1,44 +1,62 @@
 <!DOCTYPE html>
-<html>
-  <!-- this is a comment - hi!!!-->    
-    <link rel="stylesheet" type="text/css" href="herosImages.css">
+
+<html>  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <style>
+    .images {
+      display:flex;
+      flex-wrap: wrap;
+      width:100%;
+      align-items: center;
+    }
+    .column {
+      flex:25%;
+    }
+
+    .column img:hover {
+      transform: scale(1.1);
+      transition: 0.5s;
+      z-index: 200;
+    }
+  </style>
+
+  <body>
     <div class="images">
-      <!-- each div has the same name so they can all be edited the same-->
-      <div class="column">
-        <img src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/IMG_4885.jpg">
-        <img src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/1902011_BH_085_Michael_Stewart-e1550323213912-scaled.jpg">
-      </div>
-      <div class="column">
-        <img src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/David-Van-der-Griff.jpg">
-        <img src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/Dr.-AStephens.jpg">
-      </div>
-      <div class="column">
-        <img src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/David-Miller-scaled.jpg">
-        <img src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/pat-richeson.jpg">
+      <div class="grid-container">
+        <div class = "grid-image-container">
+          <div class="double-frame-bounded"></div>
+          <img class="grid-image" src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/IMG_4885.jpg">
+        </div>
+        
+        <div class = "grid-image-container">
+          <div class="double-frame-bounded"></div>
+          <img class="grid-image" src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/1902011_BH_085_Michael_Stewart-e1550323213912-scaled.jpg">
+        </div>
+        
+        <div class = "grid-image-container">
+          <div class="double-frame-bounded"></div>
+          <img class="grid-image" src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/David-Van-der-Griff.jpg">
+        </div>
+
+        <div class = "grid-image-container">
+          <div class="double-frame-bounded"></div>
+          <img class="grid-image" src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/Dr.-AStephens.jpg">
+        </div>
+
+        <div class = "grid-image-container">
+          <div class="double-frame-bounded"></div>
+          <img class="grid-image" src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/David-Miller-scaled.jpg">
+        </div>
+
+        <div class = "grid-image-container">
+          <div class="double-frame-bounded"></div>
+          <img class="grid-image" src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/pat-richeson.jpg">
+        </div>
       </div>
     </div>
-    <!-- anything below should be the same as herosImages.css, just put here to make embedding easier-->
-    <style>
-      .images{
-        display:flex;
-        flex-wrap: wrap;
-        width:100%;
-        align-items: center;
-      }
-      .column{
-          flex:25%;
-      }
-      .column img:hover{
-          transform: scale(1.1);
-          transition: 0.5s;
-          z-index: 200;
-      }
-      img{
-          width:100%;
-          height:auto;
-          border: 5px solid #957695;
-          border-radius: 5%;
-          position:relative; 
-      }
-    </style>
+  </body>
 </html>
