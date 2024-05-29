@@ -50,6 +50,11 @@ page and in its custom UI elements.
     position: relative;
     height: 100%;
     width: 100%;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05); 
+    }
 }
 
 .grid-container {
