@@ -1,0 +1,192 @@
+/* 
+This double frame class provides us with the double frame overlap 
+style from that one really nice poster that Isabella made. The base 
+version is only intended to be used in "unbounded" contexts, like 
+the landing page gallery. Otherwise the bounded version should be 
+used.
+*/
+
+// Double Frame Mixin used for creating the double frame effect
+@mixin double-frame {
+    box-sizing: border-box; 
+    width: calc(100% - 40px);
+    height: calc(100% - 40px); 
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border: 5px solid #957695;
+        pointer-events: none;
+    }
+
+    &::before, &::after {
+        border-width: 5px;
+    }
+
+    &::before {
+        margin: 0px 20px 0px 20px;
+    }
+
+    &::after {
+        margin: 20px 0px 20px 0px;
+    }
+}
+
+// Base version of the double frame class
+.double-frame {
+    @include double-frame;
+}
+
+// Bounded version of the double frame class
+.double-frame-bounded {
+    @include double-frame;
+    border: 3px solid #957695;
+    width: 100%;
+    height: 100%;
+
+    &::before, &::after {
+        border-width: 3px;
+    }
+    
+    &::before {
+        margin: 5px 15px 5px 15px;
+    }
+
+    &::after {
+        margin: 15px 5px 15px 5px;
+    }
+}
+
+/*
+The following are utility classes that are used across the landing
+page and in its custom UI elements.
+*/
+.white-header-text {
+    font-family: "Yeseva One", serif;
+    color: white;
+}
+
+.white-paragraph-text {
+    font-family: "Caudex", serif;
+    color: white;
+}
+
+.landing-gallery-image-transform {
+    position: relative;
+    filter: brightness(40%) grayscale(80%);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.landing-gallery-text-container {
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.landing-gallery-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    width: 100%;
+}
+
+.grid-image {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.grid-image-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05); 
+    }
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px;
+    gap: 10px;
+}
+
+@mixin card-text {
+    color: black;
+    text-align: left;
+    margin: 0px;
+}
+
+.card-header-text {
+    @include card-text;
+    font-family: "Yeseva One", serif;
+    padding: 10px 10px 0px 10px;
+}
+  
+.card-body-text {
+    @include card-text;
+    font-family: "Caudex", serif;
+    padding: 10px;
+}
+
+$starting-width: 80%;
+$starting-height: 30%;
+$offset: 5%;
+
+.overlapping-frame-container {
+    position: relative; // This is important
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin overlapping-frame-square {
+    position: absolute;
+    background-color: #DCC2DC;
+    border: 5px solid #4D634D;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.square3 {
+    @include overlapping-frame-square;
+    height: $starting-height;
+    width: $starting-width;
+    z-index: 10;
+}
+
+.square2 {
+    @include overlapping-frame-square;
+    width: calc(#{$starting-width} - #{$offset});
+    height: calc(#{$starting-height} + #{$offset});
+    z-index: 11;
+}
+
+.squareBase {
+    @include overlapping-frame-square;
+    width: calc(#{$starting-width} - 2 * #{$offset});
+    height: calc(#{$starting-height} + 2 * #{$offset});
+    z-index: 12;
+}
