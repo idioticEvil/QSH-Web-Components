@@ -1,68 +1,20 @@
-<!-- THIS DOES NOT WORK WELL - im gonna keep trying to fix it <3-->
+<!-- heres the Javascript to change out the images - we can add as many
+     URLs to the array as we'd like to -->
 <!DOCTYPE html>
-
 <html>  
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-
-  <style>
-    .images {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 10px;
-        width:100%;
-        align-items: center;
-    }
-    .column {
-      flex:25%;
-    }
-
-    .column img:hover {
-      transform: scale(1.1);
-      transition: 0.5s;
-      z-index: 200;
-    }
-  </style>
-
   <body>
-    <div class="images">
-      <div class="grid-container">
-        <div class = "grid-image-container">
-          <div class="double-frame-bounded"></div>
-          <img class="grid-image" src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/IMG_4885.jpg">
-        </div>
-        
-        <div class = "grid-image-container">
-          <div class="double-frame-bounded"></div>
-          <img class="grid-image" src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/1902011_BH_085_Michael_Stewart-e1550323213912-scaled.jpg">
-        </div>
-        
-        <div class = "grid-image-container">
-          <div class="double-frame-bounded"></div>
-          <img class="grid-image" src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/David-Van-der-Griff.jpg">
-        </div>
-
-        <div class = "grid-image-container">
-          <div class="double-frame-bounded"></div>
-          <img class="grid-image" src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/Dr.-AStephens.jpg">
-        </div>
-
-        <div class = "grid-image-container">
-          <div class="double-frame-bounded"></div>
-          <img class="grid-image" src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/David-Miller-scaled.jpg">
-        </div>
-
-        <div class = "grid-image-container">
-          <div class="double-frame-bounded"></div>
-          <img class="grid-image" src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/pat-richeson.jpg">
-        </div>
+    <div class = "force-padding-container">
+      <div class="images">
+        <div class="grid-container"></div>
       </div>
     </div>
 
     <script>
-         var imageUrls = [
+      var imageUrls = [
             "https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/IMG_4885.jpg",
             "https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/1902011_BH_085_Michael_Stewart-e1550323213912-scaled.jpg",
             "https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/David-Van-der-Griff.jpg",
