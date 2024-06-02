@@ -23,6 +23,7 @@ used.
         left: 0;
         right: 0;
         border: 5px solid #957695;
+        border-radius: 2.5px;
         pointer-events: none;
     }
 
@@ -53,6 +54,7 @@ used.
 
     &::before, &::after {
         border-width: 3px;
+        border-radius: 2px;
     }
     
     &::before {
@@ -62,6 +64,50 @@ used.
     &::after {
         margin: 15px 5px 15px 5px;
     }
+}
+
+$starting-width: 80%;
+$starting-height: 80%;
+$offset: 5%;
+
+/* Mixin for the overlapping frame next to the image grid - the form of it right now is a little funky but i dont hate it?*/
+@mixin overlapping-frame-square {
+    position: absolute;
+    background-color: #DCC2DC;
+    border: 5px solid #4D634D;
+    text-align: center;
+    margin: auto;
+    border-radius: 5px;
+
+    &::before, &::after{
+        content:'';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #DCC2DC;
+        border: 5px solid #4D634D; 
+        border-radius: 5px; 
+    }
+
+    &::before{
+        margin: calc(10% - 5px) calc(-10% - 5px) calc(10% - 5px) calc(-10% - 5px);
+        z-index: -30;
+    }
+    &::after{
+        margin: calc(5% - 5px) calc(-5% - 5px) calc(5% - 5px) calc(-5% - 5px);
+        z-index: -20;
+    }
+}
+
+.overlapping-frame-container {
+    @include overlapping-frame-square;
+    
+    width: 80%;
+    position: relative;
+    display: grid;
+    place-items: center;
 }
 
 /*
@@ -126,7 +172,6 @@ page and in its custom UI elements.
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    padding: 10px;
     gap: 10px;
 }
 
@@ -139,54 +184,49 @@ page and in its custom UI elements.
 .card-header-text {
     @include card-text;
     font-family: "Yeseva One", serif;
-    padding: 10px 10px 0px 10px;
+    padding: 0px 0px 5px 0px;
 }
   
 .card-body-text {
     @include card-text;
     font-family: "Caudex", serif;
+    padding: 0px 0px 5px 0px;
+}
+
+.card-interior-container {
+    place-items: left;
     padding: 10px;
 }
 
-$starting-width: 80%;
-$starting-height: 30%;
-$offset: 5%;
-
-.overlapping-frame-container {
-    position: relative; // This is important
-    display: grid;
-    place-items: center;
-    width: 100%;
-    height: 100%;
+.card-container {
+    display: flex;
 }
 
-@mixin overlapping-frame-square {
-    position: absolute;
-    background-color: #DCC2DC;
-    border: 5px solid #4D634D;
-    text-align: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.force-padding-container {
+    padding: 15px;
 }
 
-.square3 {
-    @include overlapping-frame-square;
-    height: $starting-height;
-    width: $starting-width;
-    z-index: 10;
+/* Mixin for any buttons we want to add to the bottom of any tag*/
+@mixin base-button{
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    text-decoration: none;
 }
 
-.square2 {
-    @include overlapping-frame-square;
-    width: calc(#{$starting-width} - #{$offset});
-    height: calc(#{$starting-height} + #{$offset});
-    z-index: 11;
+.card-button{
+    @include base-button;
+    background-color: #4d634d;
+    font-family: "Caudex", serif;
+    font-style: italic;
+    font-size: 1.2em;
+    color: white;
+
+    &:hover {
+        background-color: #7a8a7a; // Change this to the color you want on hover
+    }
 }
 
-.squareBase {
-    @include overlapping-frame-square;
-    width: calc(#{$starting-width} - 2 * #{$offset});
-    height: calc(#{$starting-height} + 2 * #{$offset});
-    z-index: 12;
+a {
+    text-decoration: none;
 }
