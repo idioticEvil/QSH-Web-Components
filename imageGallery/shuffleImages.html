@@ -1,0 +1,112 @@
+<!-- THIS DOES NOT WORK WELL - im gonna keep trying to fix it <3-->
+<!DOCTYPE html>
+
+<html>  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <style>
+    .images {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+        width:100%;
+        align-items: center;
+    }
+    .column {
+      flex:25%;
+    }
+
+    .column img:hover {
+      transform: scale(1.1);
+      transition: 0.5s;
+      z-index: 200;
+    }
+  </style>
+
+  <body>
+    <div class="images">
+      <div class="grid-container">
+        <div class = "grid-image-container">
+          <div class="double-frame-bounded"></div>
+          <img class="grid-image" src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/IMG_4885.jpg">
+        </div>
+        
+        <div class = "grid-image-container">
+          <div class="double-frame-bounded"></div>
+          <img class="grid-image" src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/1902011_BH_085_Michael_Stewart-e1550323213912-scaled.jpg">
+        </div>
+        
+        <div class = "grid-image-container">
+          <div class="double-frame-bounded"></div>
+          <img class="grid-image" src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/David-Van-der-Griff.jpg">
+        </div>
+
+        <div class = "grid-image-container">
+          <div class="double-frame-bounded"></div>
+          <img class="grid-image" src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/Dr.-AStephens.jpg">
+        </div>
+
+        <div class = "grid-image-container">
+          <div class="double-frame-bounded"></div>
+          <img class="grid-image" src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/David-Miller-scaled.jpg">
+        </div>
+
+        <div class = "grid-image-container">
+          <div class="double-frame-bounded"></div>
+          <img class="grid-image" src="https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/pat-richeson.jpg">
+        </div>
+      </div>
+    </div>
+
+    <script>
+         var imageUrls = [
+            "https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/IMG_4885.jpg",
+            "https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/1902011_BH_085_Michael_Stewart-e1550323213912-scaled.jpg",
+            "https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/David-Van-der-Griff.jpg",
+            "https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/Dr.-AStephens.jpg",
+            "https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/David-Miller-scaled.jpg",
+            "https://queerhistory.as.ua.edu/wp-content/uploads/2019/12/pat-richeson.jpg"
+            // Add more image URLs as needed
+        ];
+
+        window.onload = function() {
+            var container = document.querySelector('.grid-container');
+
+            // Shuffle the array of image URLs
+            shuffleArray(imageUrls);
+
+            // Select a random subset of images to display
+            var numImagesToDisplay = Math.min(6, imageUrls.length);
+            for (var i = 0; i < numImagesToDisplay; i++) {
+                var imageUrl = imageUrls[i];
+                var imageContainer = document.createElement('div');
+                imageContainer.classList.add('grid-image-container');
+
+                var doubleFrameBounded = document.createElement('div');
+                doubleFrameBounded.classList.add('double-frame-bounded');
+
+                var img = document.createElement('img');
+                img.classList.add('grid-image');
+                img.src = imageUrl;
+
+                imageContainer.appendChild(doubleFrameBounded);
+                imageContainer.appendChild(img);
+                container.appendChild(imageContainer);
+            }
+        };
+
+        // Function to shuffle an array
+        function shuffleArray(array) {
+            for (var i = array.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+    </script>
+  </body>
+</html>
