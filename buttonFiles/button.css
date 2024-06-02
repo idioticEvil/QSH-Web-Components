@@ -1,0 +1,8 @@
+.frame-button{
+    background-color: #4D634D;
+    border-radius: 10%;
+    bottom:10%;
+    padding:1%;
+    height: fit-content;
+    width: fit-content;
+}
