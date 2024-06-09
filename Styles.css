@@ -76,7 +76,10 @@ used.
   margin: 15px 5px 15px 5px;
 }
 
-/* Mixin for the overlapping frame next to the image grid - the form of it right now is a little funky but i dont hate it?*/
+/*
+This overlapping frame class provides us with one of the card
+designs used for the landing page. 
+*/
 .overlapping-frame-container {
   position: absolute;
   background-color: #DCC2DC;
@@ -142,13 +145,68 @@ page and in its custom UI elements.
   text-align: center;
 }
 
-.landing-gallery-container {
+.landing-gallery-page {
+  display: none;
   position: relative;
-  display: flex;
   align-items: center;
   justify-content: center;
   height: 80vh;
-  width: 100%;
+  flex: 0 0 100vw;
+}
+
+.landing-gallery-content {
+  display: flex;
+  width: 100vw;
+}
+
+.active {
+  display: flex;
+}
+
+.gallery-controller {
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  width: fit-content;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: #DCC2DC;
+  border-radius: 50px;
+  border-color: #4d634d;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0.375rem;
+  border-color: transparent;
+  background-color: #4d634d;
+  border-radius: 100px;
+  transition: background-color 0.6s ease;
+  display: inline-block;
+  padding: 0;
+}
+
+.back, .forward {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #4d634d;
+  border-color: transparent;
+  background-color: transparent;
+  font-size: 18px;
+  line-height: 0%;
+  margin: 0rem 0.375rem;
+  font-weight: normal;
+  border-width: 0;
+  padding: 0;
 }
 
 .grid-image {
@@ -220,4 +278,9 @@ page and in its custom UI elements.
 
 a {
   text-decoration: none;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
 }/*# sourceMappingURL=Styles.css.map */
