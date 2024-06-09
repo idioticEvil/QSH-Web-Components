@@ -9,8 +9,6 @@ used.
 // Double Frame Mixin used for creating the double frame effect
 @mixin double-frame {
     box-sizing: border-box; 
-    width: calc(100% - 40px);
-    height: calc(100% - 40px); 
     position: absolute;
     text-align: center;
     z-index: 1;
@@ -25,9 +23,6 @@ used.
         border: 5px solid #957695;
         border-radius: 2.5px;
         pointer-events: none;
-    }
-
-    &::before, &::after {
         border-width: 5px;
     }
 
@@ -40,12 +35,15 @@ used.
     }
 }
 
-// Base version of the double frame class
-.double-frame {
+// Version of the Double Frame class used in the image gallery
+.double-frame-gallery {
     @include double-frame;
+
+    width: calc(100% - 40px);
+    height: calc(100% - 40px); 
 }
 
-// Bounded version of the double frame class
+// Version of the Double Frame class used on bounded images
 .double-frame-bounded {
     @include double-frame;
     border: 3px solid #957695;
@@ -64,6 +62,40 @@ used.
     &::after {
         margin: 15px 5px 15px 5px;
     }
+}
+
+@mixin double-rounded-rectangle-base {
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border: 5px solid #957695;
+        pointer-events: none;
+    }
+
+    &::before {
+        border-radius: 30px;
+    }
+
+    &::after {
+        margin: 10px;
+        border-radius: 20px;
+        border-width: 2.5px;
+    }
+}
+
+.double-rounded-rectangle-gallery {
+    @include double-rounded-rectangle-base;
+
+    box-sizing: border-box; 
+    width: calc(100% - 40px);
+    height: calc(100% - 40px); 
+    position: absolute;
+    text-align: center;
+    z-index: 1;
 }
 
 /*
@@ -85,7 +117,7 @@ $offset: 5%;
     margin: auto;
     border-radius: 5px;
 
-    &::before, &::after{
+    &::before, &::after {
         content:'';
         position: absolute;
         top: 0;
@@ -97,11 +129,11 @@ $offset: 5%;
         border-radius: 5px; 
     }
 
-    &::before{
+    &::before {
         margin: calc(10% - 5px) calc(-10% - 5px) calc(10% - 5px) calc(-10% - 5px);
         z-index: -30;
     }
-    &::after{
+    &::after {
         margin: calc(5% - 5px) calc(-5% - 5px) calc(5% - 5px) calc(-5% - 5px);
         z-index: -20;
     }
@@ -148,6 +180,7 @@ page and in its custom UI elements.
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    width: 80%;
 }
 
 .landing-gallery-page {
@@ -155,14 +188,14 @@ page and in its custom UI elements.
     position: relative;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+    height: 77.5vh;
     flex: 0 0 100vw;
 }
 
 .landing-gallery-content {
     display: flex;
     width: 100vw;
-    padding-bottom: 10px;
+    padding-bottom: 7.5px;
 }
 
 .active {
@@ -273,12 +306,12 @@ page and in its custom UI elements.
 @mixin base-button{
     border-radius: 10px;
     padding: 10px;
-    border: none;
     text-decoration: none;
 }
 
 .card-button{
     @include base-button;
+    border: none;
     background-color: #4d634d;
     font-family: "Caudex", serif;
     font-style: italic;
@@ -286,8 +319,21 @@ page and in its custom UI elements.
     color: white;
 
     &:hover {
-        background-color: #7a8a7a; // Change this to the color you want on hover
+        background-color: #7a8a7a;
     }
+}
+
+.gallery-button {
+    @include base-button;
+    border-style: solid;
+    border-color: #957695;
+    border-width: 5px;
+    background-color: #4d634d;
+    font-family: "Caudex", serif;
+    font-style: italic;
+    font-size: 1.2em;
+    color: white;
+    display: inline-block;
 }
 
 a {

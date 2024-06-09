@@ -5,15 +5,15 @@ version is only intended to be used in "unbounded" contexts, like
 the landing page gallery. Otherwise the bounded version should be 
 used.
 */
-.double-frame {
+.double-frame-gallery {
   box-sizing: border-box;
-  width: calc(100% - 40px);
-  height: calc(100% - 40px);
   position: absolute;
   text-align: center;
   z-index: 1;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
 }
-.double-frame::before, .double-frame::after {
+.double-frame-gallery::before, .double-frame-gallery::after {
   content: "";
   position: absolute;
   top: 0;
@@ -23,21 +23,17 @@ used.
   border: 5px solid #957695;
   border-radius: 2.5px;
   pointer-events: none;
-}
-.double-frame::before, .double-frame::after {
   border-width: 5px;
 }
-.double-frame::before {
+.double-frame-gallery::before {
   margin: 0px 20px 0px 20px;
 }
-.double-frame::after {
+.double-frame-gallery::after {
   margin: 20px 0px 20px 0px;
 }
 
 .double-frame-bounded {
   box-sizing: border-box;
-  width: calc(100% - 40px);
-  height: calc(100% - 40px);
   position: absolute;
   text-align: center;
   z-index: 1;
@@ -55,8 +51,6 @@ used.
   border: 5px solid #957695;
   border-radius: 2.5px;
   pointer-events: none;
-}
-.double-frame-bounded::before, .double-frame-bounded::after {
   border-width: 5px;
 }
 .double-frame-bounded::before {
@@ -74,6 +68,33 @@ used.
 }
 .double-frame-bounded::after {
   margin: 15px 5px 15px 5px;
+}
+
+.double-rounded-rectangle-gallery {
+  box-sizing: border-box;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+}
+.double-rounded-rectangle-gallery::before, .double-rounded-rectangle-gallery::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 5px solid #957695;
+  pointer-events: none;
+}
+.double-rounded-rectangle-gallery::before {
+  border-radius: 30px;
+}
+.double-rounded-rectangle-gallery::after {
+  margin: 10px;
+  border-radius: 20px;
+  border-width: 2.5px;
 }
 
 /*
@@ -143,6 +164,7 @@ page and in its custom UI elements.
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  width: 80%;
 }
 
 .landing-gallery-page {
@@ -150,14 +172,14 @@ page and in its custom UI elements.
   position: relative;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  height: 77.5vh;
   flex: 0 0 100vw;
 }
 
 .landing-gallery-content {
   display: flex;
   width: 100vw;
-  padding-bottom: 10px;
+  padding-bottom: 7.5px;
 }
 
 .active {
@@ -265,8 +287,8 @@ page and in its custom UI elements.
 .card-button {
   border-radius: 10px;
   padding: 10px;
-  border: none;
   text-decoration: none;
+  border: none;
   background-color: #4d634d;
   font-family: "Caudex", serif;
   font-style: italic;
@@ -275,6 +297,21 @@ page and in its custom UI elements.
 }
 .card-button:hover {
   background-color: #7a8a7a;
+}
+
+.gallery-button {
+  border-radius: 10px;
+  padding: 10px;
+  text-decoration: none;
+  border-style: solid;
+  border-color: #957695;
+  border-width: 5px;
+  background-color: #4d634d;
+  font-family: "Caudex", serif;
+  font-style: italic;
+  font-size: 1.2em;
+  color: white;
+  display: inline-block;
 }
 
 a {
