@@ -157,6 +157,7 @@ page and in its custom UI elements.
 .landing-gallery-content {
   display: flex;
   width: 100vw;
+  padding-bottom: 10px;
 }
 
 .active {
