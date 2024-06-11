@@ -149,6 +149,83 @@ $offset: 5%;
     place-items: center;
 }
 
+// Base mixin used for creating the overlapping popout effect
+@mixin overlapping-popout-base {
+    position: absolute;
+    background-color: #DCC2DC;
+    border: 5px solid #4D634D;
+    text-align: center;
+    border-radius: 5px;
+
+    &::before {
+        content:'';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #B09BB0;
+        border: 5px solid #4D634D; 
+        border-radius: 5px; 
+        margin: -1em 1em 1em -1em;
+        padding: 10px;
+        z-index: -20;
+    }
+}
+
+.overlapping-popout-container {
+    @include overlapping-popout-base;
+    
+    width: 80%;
+    height: 80%;
+    position: relative;
+    display: grid;
+    place-items: center;
+    margin: auto;
+}
+
+@mixin double-bar-card-base {
+    position: relative;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    background-color: #DCC2DC;
+    border: 5px solid #4D634D;
+    border-radius: 10px;
+    padding: 15px;
+
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: transparent;
+        border: 5px solid #4D634D; 
+        border-radius: 0px;
+    }
+
+    &::before {
+        margin: -5px 10px -5px 10px;
+        z-index: 1;
+    }
+
+    &::after {
+        margin: 10px -5px 10px -5px;
+        z-index: 2;
+    }
+}
+
+.double-bar-card-container {
+    @include double-bar-card-base;
+    
+    width: 80%;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
 /*
 The following are utility classes that are used across the landing
 page and in its custom UI elements.
