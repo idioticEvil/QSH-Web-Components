@@ -1,9 +1,7 @@
 /* 
-This double frame class provides us with the double frame overlap 
-style from that one really nice poster that Isabella made. The base 
-version is only intended to be used in "unbounded" contexts, like 
-the landing page gallery. Otherwise the bounded version should be 
-used.
+This is the double frame class. It's design was inspired by a
+poster designed by Isabella Garrison. It has two main variants,
+one used in the image gallery, and one used for framing photos.
 */
 .double-frame-gallery {
   box-sizing: border-box;
@@ -20,7 +18,7 @@ used.
   bottom: 0;
   left: 0;
   right: 0;
-  border: 5px solid #957695;
+  border: 5px solid #987398;
   border-radius: 2.5px;
   pointer-events: none;
   border-width: 5px;
@@ -48,7 +46,7 @@ used.
   bottom: 0;
   left: 0;
   right: 0;
-  border: 5px solid #957695;
+  border: 5px solid #987398;
   border-radius: 2.5px;
   pointer-events: none;
   border-width: 5px;
@@ -70,6 +68,12 @@ used.
   margin: 15px 5px 15px 5px;
 }
 
+/*
+This is the double rounded rectangle class. It consists of two
+rounded rectangles, one with a larger radius and thickness than
+the other. There are two main variants, one used in the image
+gallery, and one used for framing photos.
+*/
 .double-rounded-rectangle-gallery {
   box-sizing: border-box;
   width: calc(100% - 40px);
@@ -85,7 +89,7 @@ used.
   bottom: 0;
   left: 0;
   right: 0;
-  border: 5px solid #957695;
+  border: 5px solid #987398;
   pointer-events: none;
 }
 .double-rounded-rectangle-gallery::before {
@@ -97,9 +101,122 @@ used.
   border-width: 2.5px;
 }
 
+.double-rounded-rectangle-frame {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+}
+.double-rounded-rectangle-frame::before, .double-rounded-rectangle-frame::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 5px solid #987398;
+  pointer-events: none;
+}
+.double-rounded-rectangle-frame::before {
+  border-radius: 20px;
+}
+.double-rounded-rectangle-frame::after {
+  margin: 10px;
+  border-radius: 10px;
+  border-width: 2.5px;
+}
+
+.double-rounded-rectangle-crop {
+  border-radius: 20px;
+}
+
+/*
+This is the double bar class. It consists of two bars pushed out to
+the edges of the container. 
+*/
+.double-bar-card {
+  position: relative;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  border-radius: 10px;
+  padding: 15px;
+  width: 80%;
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin: auto;
+  background-color: #DCC2DC;
+  border: 5px solid #4D634D;
+}
+.double-bar-card::before, .double-bar-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  border-radius: 0px;
+}
+.double-bar-card::before, .double-bar-card::after {
+  border: 5px solid #4D634D;
+}
+.double-bar-card::before {
+  margin: -5px 10px -5px 10px;
+  z-index: 1;
+}
+.double-bar-card::after {
+  margin: 10px -5px 10px -5px;
+  z-index: 2;
+}
+
+.double-bar-frame {
+  position: relative;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  border-radius: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+  border: 4px solid #987398;
+}
+.double-bar-frame::before, .double-bar-frame::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  border-radius: 0px;
+}
+.double-bar-frame::before, .double-bar-frame::after {
+  border: 4px solid #987398;
+}
+.double-bar-frame::before {
+  margin: -4px 10px -4px 10px;
+  z-index: 1;
+}
+.double-bar-frame::after {
+  margin: 10px -4px 10px -4px;
+  z-index: 2;
+}
+
+.double-bar-crop {
+  border-radius: 10px;
+}
+
 /*
 This overlapping frame class provides us with one of the card
-designs used for the landing page. 
+designs used for the landing page.
 */
 .overlapping-frame-container {
   position: absolute;
@@ -139,12 +256,12 @@ designs used for the landing page.
   border: 5px solid #4D634D;
   text-align: center;
   border-radius: 5px;
+  margin: auto;
   width: 80%;
   height: 80%;
   position: relative;
   display: grid;
   place-items: center;
-  margin: auto;
 }
 .overlapping-popout-container::before {
   content: "";
@@ -159,40 +276,6 @@ designs used for the landing page.
   margin: -1em 1em 1em -1em;
   padding: 10px;
   z-index: -20;
-}
-
-.double-bar-card-container {
-  position: relative;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  background-color: #DCC2DC;
-  border: 5px solid #4D634D;
-  border-radius: 10px;
-  padding: 15px;
-  width: 80%;
-  position: relative;
-  display: grid;
-  place-items: center;
-}
-.double-bar-card-container::before, .double-bar-card-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: transparent;
-  border: 5px solid #4D634D;
-  border-radius: 0px;
-}
-.double-bar-card-container::before {
-  margin: -5px 10px -5px 10px;
-  z-index: 1;
-}
-.double-bar-card-container::after {
-  margin: 10px -5px 10px -5px;
-  z-index: 2;
 }
 
 /*
@@ -306,7 +389,7 @@ page and in its custom UI elements.
 
 .grid-image-container {
   position: relative;
-  height: 100%;
+  height: 40vw;
   width: 100%;
   transition: transform 0.3s ease;
 }
@@ -317,7 +400,7 @@ page and in its custom UI elements.
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
+  gap: 15px;
 }
 
 .card-header-text {

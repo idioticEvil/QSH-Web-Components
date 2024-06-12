@@ -1,9 +1,7 @@
 /* 
-This double frame class provides us with the double frame overlap 
-style from that one really nice poster that Isabella made. The base 
-version is only intended to be used in "unbounded" contexts, like 
-the landing page gallery. Otherwise the bounded version should be 
-used.
+This is the double frame class. It's design was inspired by a
+poster designed by Isabella Garrison. It has two main variants,
+one used in the image gallery, and one used for framing photos.
 */
 
 // Double Frame Mixin used for creating the double frame effect
@@ -20,7 +18,7 @@ used.
         bottom: 0;
         left: 0;
         right: 0;
-        border: 5px solid #957695;
+        border: 5px solid #987398;
         border-radius: 2.5px;
         pointer-events: none;
         border-width: 5px;
@@ -38,12 +36,11 @@ used.
 // Version of the Double Frame class used in the image gallery
 .double-frame-gallery {
     @include double-frame;
-
     width: calc(100% - 40px);
     height: calc(100% - 40px); 
 }
 
-// Version of the Double Frame class used on bounded images
+// Version of the Double Frame class used to frame photos
 .double-frame-bounded {
     @include double-frame;
     border: 3px solid #957695;
@@ -64,6 +61,14 @@ used.
     }
 }
 
+/*
+This is the double rounded rectangle class. It consists of two
+rounded rectangles, one with a larger radius and thickness than
+the other. There are two main variants, one used in the image
+gallery, and one used for framing photos.
+*/
+
+// Base mixin used for creating the double rounded rectangle effect
 @mixin double-rounded-rectangle-base {
     &::before, &::after {
         content: '';
@@ -72,9 +77,21 @@ used.
         bottom: 0;
         left: 0;
         right: 0;
-        border: 5px solid #957695;
+        border: 5px solid #987398;
         pointer-events: none;
     }
+}
+
+// Class to be called for the double rounded rectangle in the gallery
+.double-rounded-rectangle-gallery {
+    @include double-rounded-rectangle-base;
+
+    box-sizing: border-box; 
+    width: calc(100% - 40px);
+    height: calc(100% - 40px); 
+    position: absolute;
+    text-align: center;
+    z-index: 1;
 
     &::before {
         border-radius: 30px;
@@ -87,20 +104,124 @@ used.
     }
 }
 
-.double-rounded-rectangle-gallery {
+// Class to be called for the double rounded rectangle used for framing
+.double-rounded-rectangle-frame {
     @include double-rounded-rectangle-base;
 
     box-sizing: border-box; 
-    width: calc(100% - 40px);
-    height: calc(100% - 40px); 
+    width: 100%;
+    height: 100%; 
     position: absolute;
     text-align: center;
     z-index: 1;
+
+    &::before {
+        border-radius: 20px;
+    }
+
+    &::after {
+        margin: 10px;
+        border-radius: 10px;
+        border-width: 2.5px;
+    }
+}
+
+// Random side-class used for cropping images to rounded corners
+// used with the double rounded rectangle frame
+.double-rounded-rectangle-crop {
+    border-radius: 20px;
+}
+
+/*
+This is the double bar class. It consists of two bars pushed out to
+the edges of the container. 
+*/
+
+// Base mixin used for creating the double bar effect
+@mixin double-bar-base {
+    position: relative;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    border-radius: 10px;
+    padding: 15px;
+
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: transparent;
+        border-radius: 0px;
+    }
+}
+
+// Class to be called for the double bar effect when used in a card
+.double-bar-card {
+    @include double-bar-base;
+    
+    width: 80%;
+    position: relative;
+    display: grid;
+    place-items: center;
+    margin: auto;
+    background-color: #DCC2DC;
+    border: 5px solid #4D634D;
+
+    &::before, &::after {
+        border: 5px solid #4D634D;
+    }
+
+    &::before {
+        margin: -5px 10px -5px 10px;
+        z-index: 1;
+    }
+
+    &::after {
+        margin: 10px -5px 10px -5px;
+        z-index: 2;
+    }
+}
+
+// Class to be called for the double bar effect when used for framing
+// photos
+.double-bar-frame {
+    @include double-bar-base;
+
+    box-sizing: border-box; 
+    width: 100%;
+    height: 100%; 
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+
+    border: 4px solid #987398;
+
+    &::before, &::after {
+        border: 4px solid #987398;
+    }
+
+    &::before {
+        margin: -4px 10px -4px 10px;
+        z-index: 1;
+    }
+
+    &::after {
+        margin: 10px -4px 10px -4px;
+        z-index: 2;
+    }
+}
+
+// Random side-class used for cropping images to rounded corners
+.double-bar-crop {
+    border-radius: 10px;
 }
 
 /*
 This overlapping frame class provides us with one of the card
-designs used for the landing page. 
+designs used for the landing page.
 */
 
 // Variables used for properly scaling the overlapping boxes
@@ -156,6 +277,7 @@ $offset: 5%;
     border: 5px solid #4D634D;
     text-align: center;
     border-radius: 5px;
+    margin: auto;
 
     &::before {
         content:'';
@@ -178,49 +300,6 @@ $offset: 5%;
     
     width: 80%;
     height: 80%;
-    position: relative;
-    display: grid;
-    place-items: center;
-    margin: auto;
-}
-
-@mixin double-bar-card-base {
-    position: relative;
-    display: grid;
-    place-items: center;
-    text-align: center;
-    background-color: #DCC2DC;
-    border: 5px solid #4D634D;
-    border-radius: 10px;
-    padding: 15px;
-
-    &::before, &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-color: transparent;
-        border: 5px solid #4D634D; 
-        border-radius: 0px;
-    }
-
-    &::before {
-        margin: -5px 10px -5px 10px;
-        z-index: 1;
-    }
-
-    &::after {
-        margin: 10px -5px 10px -5px;
-        z-index: 2;
-    }
-}
-
-.double-bar-card-container {
-    @include double-bar-card-base;
-    
-    width: 80%;
     position: relative;
     display: grid;
     place-items: center;
@@ -337,7 +416,7 @@ page and in its custom UI elements.
 
 .grid-image-container {
     position: relative;
-    height: 100%;
+    height: 40vw;
     width: 100%;
     transition: transform 0.3s ease;
 
@@ -349,7 +428,7 @@ page and in its custom UI elements.
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
+    gap: 15px;
 }
 
 @mixin card-text {

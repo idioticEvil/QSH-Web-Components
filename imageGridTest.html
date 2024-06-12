@@ -1,0 +1,88 @@
+<html>  
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="Styles.css">
+    </head>
+
+    <body>
+        <div class = "force-padding-container">
+            <div class="images">
+                <div class="grid-container"></div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        var imageUrls = [
+            "https://queerhistory.as.ua.edu/wp-content/uploads/2024/06/Poster-design.png",
+            "https://queerhistory.as.ua.edu/wp-content/uploads/2024/06/Poster-Upscaling.png",
+            "https://queerhistory.as.ua.edu/wp-content/uploads/2024/06/Image-Upscaling-Poster.png",
+            "https://queerhistory.as.ua.edu/wp-content/uploads/2024/06/Poster-Image-Upscaling.png",
+            "https://queerhistory.as.ua.edu/wp-content/uploads/2024/06/Image-Upscaling-Poster-1.png",
+            "https://queerhistory.as.ua.edu/wp-content/uploads/2024/06/Poster-Image-Upscaling-1.png",
+            "https://queerhistory.as.ua.edu/wp-content/uploads/2024/06/Poster-Image-Upscaling-2.png",
+            "https://queerhistory.as.ua.edu/wp-content/uploads/2024/06/Image-Upscaling-Poster-2.png",
+            "https://queerhistory.as.ua.edu/wp-content/uploads/2024/06/Image-Upscaling-Poster-3.png"
+            // Add more image URLs as needed
+        ];
+
+        window.onload = function() {
+            var container = document.querySelector('.grid-container');
+
+            // Shuffle the array of image URLs
+            shuffleArray(imageUrls);
+
+            // Select a random subset of images to display
+            var numImagesToDisplay = Math.min(6, imageUrls.length);
+            var availableFrameClasses = ['double-frame-bounded', 'double-bar-frame', 'double-rounded-rectangle-frame'];
+            var prevClass = -1;
+
+            for (var i = 0; i < numImagesToDisplay; i++) {
+                var imageUrl = imageUrls[i];
+                var imageContainer = document.createElement('div');
+                imageContainer.classList.add('grid-image-container');
+
+                var newFrame = document.createElement('div');
+                var randomClass = Math.floor(Math.random() * availableFrameClasses.length);
+                
+                while (randomClass === prevClass) {
+                    randomClass = Math.floor(Math.random() * availableFrameClasses.length);
+                }
+
+                newFrame.classList.add(availableFrameClasses[randomClass]);
+                prevClass = randomClass;
+
+                var img = document.createElement('img');
+                img.classList.add('grid-image');
+                switch(randomClass) {
+                    case 0:
+                        // No additional class needed
+                        break;
+                    case 1:
+                        img.classList.add('double-bar-crop');
+                        break;
+                    case 2:
+                        img.classList.add('double-rounded-rectangle-crop');
+                        break;
+                }
+
+                img.src = imageUrl;
+
+                imageContainer.appendChild(newFrame);
+                imageContainer.appendChild(img);
+                container.appendChild(imageContainer);
+            }
+        };
+
+        // Function to shuffle an array
+        function shuffleArray(array) {
+            for (var i = array.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+    </script>
+</html>
