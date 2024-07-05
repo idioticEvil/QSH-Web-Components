@@ -251,11 +251,11 @@ $offset: 5%;
     }
 
     &::before {
-        margin: calc(10% - 5px) calc(-10% - 5px) calc(10% - 5px) calc(-10% - 5px);
+        margin: calc(7.5% - 5px) calc(-7.5% - 5px) calc(7.5% - 5px) calc(-7.5% - 5px);
         z-index: -30;
     }
     &::after {
-        margin: calc(5% - 5px) calc(-5% - 5px) calc(5% - 5px) calc(-5% - 5px);
+        margin: calc(3.75% - 5px) calc(-3.75% - 5px) calc(3.75% - 5px) calc(-3.75% - 5px);
         z-index: -20;
     }
 }
@@ -416,7 +416,7 @@ page and in its custom UI elements.
 
 .grid-image-container {
     position: relative;
-    height: 40vw;
+    height: 100%;
     width: 100%;
     transition: transform 0.3s ease;
 
