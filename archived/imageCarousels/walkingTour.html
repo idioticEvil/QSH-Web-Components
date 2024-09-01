@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!-- This is the image carousel for the walking tour -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+  <style>
+    body{
+      
+    }
+    .carousel-mini-container {
+      border: 5px solid #4d634d;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70vh;
+        width: 80vw;
+        overflow: hidden;
+        margin:auto;
+    }
+    .carousel-mini {
+        display: flex;
+        height: 100%;
+        width: 100%;
+    }
+    .carousel-mini-inner {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
+        height: 100%;
+    }
+    .carousel-item {
+        flex: 0 0 100%;
+        height: 100%;
+        width:100%;
+        object-fit: cover;
+    }
+  </style>
+    <body>
+            <div class="carousel-mini-container double-frame-bounded">
+                <div class="carousel-mini">
+                    <div class="carousel-mini-inner">
+                        <img class="carousel-item active" src="https://queerhistory.as.ua.edu/wp-content/uploads/2024/06/BamaTheatre.png">
+                        <img class="carousel-item" src="https://queerhistory.as.ua.edu/wp-content/uploads/2024/06/Courthouse.png">
+                        <img class="carousel-item" src="https://queerhistory.as.ua.edu/wp-content/uploads/2024/06/FiveHorizons.png">
+                        <img class="carousel-item" src="https://queerhistory.as.ua.edu/wp-content/uploads/2024/06/Icon.png">
+                        <img class="carousel-item" src="https://queerhistory.as.ua.edu/wp-content/uploads/2024/06/MichaelsLounge.png">       
+                    </div>
+                </div>
+            </div>
+        <script>
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                const slides = document.querySelectorAll('.carousel-item');
+                const totalSlides = slides.length;
+
+                if (index >= totalSlides) {
+                    currentIndex = 0;
+                } else if (index < 0) {
+                    currentIndex = totalSlides - 1;
+                } else {
+                    currentIndex = index;
+                }
+
+                const offset = -currentIndex * 100;
+                document.querySelector('.carousel-mini-inner').style.transform = `translateX(${offset}%)`;
+
+                slides.forEach(slide => slide.classList.remove('active'));
+                slides[currentIndex].classList.add('active');
+            }
+
+            function nextSlide() {
+                showSlide(currentIndex + 1);
+            }
+
+            // Auto slide
+            setInterval(nextSlide, 3000);
+
+            document.addEventListener("DOMContentLoaded", function () {
+                showSlide(currentIndex);
+            });
+        </script>
+    </body>
+</html>
