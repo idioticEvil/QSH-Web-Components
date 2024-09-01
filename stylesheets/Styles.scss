@@ -50,6 +50,7 @@ one used in the image gallery, and one used for framing photos.
     &::before, &::after {
         border-width: 3px;
         border-radius: 2px;
+        z-index:100;
     }
     
     &::before {
@@ -224,11 +225,6 @@ This overlapping frame class provides us with one of the card
 designs used for the landing page.
 */
 
-// Variables used for properly scaling the overlapping boxes
-$starting-width: 80%;
-$starting-height: 80%;
-$offset: 5%;
-
 // Base mixin used for creating the overlapping frame effect
 @mixin overlapping-frame-square {
     position: absolute;
@@ -251,12 +247,12 @@ $offset: 5%;
     }
 
     &::before {
-        margin: calc(7.5% - 5px) calc(-7.5% - 5px) calc(7.5% - 5px) calc(-7.5% - 5px);
-        z-index: -30;
+        margin: calc(2vh - 5px) calc(-2vh - 5px) calc(2vh - 5px) calc(-2vh - 5px);
+        z-index: -20;
     }
     &::after {
-        margin: calc(3.75% - 5px) calc(-3.75% - 5px) calc(3.75% - 5px) calc(-3.75% - 5px);
-        z-index: -20;
+        margin: calc(4vh - 5px) calc(-4vh - 5px) calc(4vh - 5px) calc(-4vh - 5px);
+        z-index: -30;
     }
 }
 
@@ -264,10 +260,11 @@ $offset: 5%;
 .overlapping-frame-container {
     @include overlapping-frame-square;
     
-    width: 80%;
+    width: 75%;
     position: relative;
     display: grid;
     place-items: center;
+    padding: 0;
 }
 
 // Base mixin used for creating the overlapping popout effect
@@ -450,8 +447,9 @@ page and in its custom UI elements.
 }
 
 .card-interior-container {
-    place-items: left;
+    place-items: center;
     padding: 10px;
+    width: 100%;
 }
 
 .card-container {
@@ -500,7 +498,3 @@ a {
     text-decoration: none;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-}
