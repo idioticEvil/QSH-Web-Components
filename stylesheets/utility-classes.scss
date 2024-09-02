@@ -149,6 +149,11 @@ page and in its custom UI elements.
     display: flex;
 }
 
+.card-image {
+    object-fit: cover;
+    width: 60vw;
+}
+
 .force-padding-container {
     padding: 15px;
 }

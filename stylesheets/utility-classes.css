@@ -148,6 +148,12 @@ page and in its custom UI elements.
   display: flex;
 }
 
+.card-image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 60vw;
+}
+
 .force-padding-container {
   padding: 15px;
 }
