@@ -1,0 +1,81 @@
+/*
+This is the double bar class. It consists of two bars pushed out to
+the edges of the container. 
+*/
+.double-bar-card {
+  position: relative;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  border-radius: 10px;
+  padding: 15px;
+  width: 80%;
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin: auto;
+  background-color: #DCC2DC;
+  border: 5px solid #4D634D;
+}
+.double-bar-card::before, .double-bar-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  border-radius: 0px;
+}
+.double-bar-card::before, .double-bar-card::after {
+  border: 5px solid #4D634D;
+}
+.double-bar-card::before {
+  margin: -5px 10px -5px 10px;
+  z-index: 1;
+}
+.double-bar-card::after {
+  margin: 10px -5px 10px -5px;
+  z-index: 2;
+}
+
+.double-bar-frame {
+  position: relative;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  border-radius: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+  border: 4px solid #987398;
+}
+.double-bar-frame::before, .double-bar-frame::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  border-radius: 0px;
+}
+.double-bar-frame::before, .double-bar-frame::after {
+  border: 4px solid #987398;
+}
+.double-bar-frame::before {
+  margin: -4px 10px -4px 10px;
+  z-index: 1;
+}
+.double-bar-frame::after {
+  margin: 10px -4px 10px -4px;
+  z-index: 2;
+}
+
+.double-bar-crop {
+  border-radius: 10px;
+}/*# sourceMappingURL=double-bar.css.map */

@@ -1,0 +1,134 @@
+/* 
+This is the double frame class. It's design was inspired by a
+poster designed by Isabella Garrison. It has two main variants,
+one used in the image gallery, and one used for framing photos.
+*/
+.double-frame-gallery {
+  box-sizing: border-box;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+}
+.double-frame-gallery::before, .double-frame-gallery::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 5px solid #987398;
+  border-radius: 2.5px;
+  pointer-events: none;
+  border-width: 5px;
+}
+.double-frame-gallery::before {
+  margin: 0px 20px 0px 20px;
+}
+.double-frame-gallery::after {
+  margin: 20px 0px 20px 0px;
+}
+
+.double-frame-bounded {
+  box-sizing: border-box;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+  border: 3px solid #957695;
+  width: 100%;
+  height: 100%;
+}
+.double-frame-bounded::before, .double-frame-bounded::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 5px solid #987398;
+  border-radius: 2.5px;
+  pointer-events: none;
+  border-width: 5px;
+}
+.double-frame-bounded::before {
+  margin: 0px 20px 0px 20px;
+}
+.double-frame-bounded::after {
+  margin: 20px 0px 20px 0px;
+}
+.double-frame-bounded::before, .double-frame-bounded::after {
+  border-width: 3px;
+  border-radius: 2px;
+  z-index: 100;
+}
+.double-frame-bounded::before {
+  margin: 5px 15px 5px 15px;
+}
+.double-frame-bounded::after {
+  margin: 15px 5px 15px 5px;
+}
+
+/*
+This is the double rounded rectangle class. It consists of two
+rounded rectangles, one with a larger radius and thickness than
+the other. There are two main variants, one used in the image
+gallery, and one used for framing photos.
+*/
+.double-rounded-rectangle-gallery {
+  box-sizing: border-box;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+}
+.double-rounded-rectangle-gallery::before, .double-rounded-rectangle-gallery::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 5px solid #987398;
+  pointer-events: none;
+}
+.double-rounded-rectangle-gallery::before {
+  border-radius: 30px;
+}
+.double-rounded-rectangle-gallery::after {
+  margin: 10px;
+  border-radius: 20px;
+  border-width: 2.5px;
+}
+
+.double-rounded-rectangle-frame {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+}
+.double-rounded-rectangle-frame::before, .double-rounded-rectangle-frame::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 5px solid #987398;
+  pointer-events: none;
+}
+.double-rounded-rectangle-frame::before {
+  border-radius: 20px;
+}
+.double-rounded-rectangle-frame::after {
+  margin: 10px;
+  border-radius: 10px;
+  border-width: 2.5px;
+}
+
+.double-rounded-rectangle-crop {
+  border-radius: 20px;
+}/*# sourceMappingURL=double-frame.css.map */

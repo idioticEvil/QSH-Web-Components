@@ -1,135 +1,66 @@
-/* 
-This is the double frame class. It's design was inspired by a
-poster designed by Isabella Garrison. It has two main variants,
-one used in the image gallery, and one used for framing photos.
-*/
-.double-frame-gallery {
-  box-sizing: border-box;
-  position: absolute;
-  text-align: center;
-  z-index: 1;
-  width: calc(100% - 40px);
-  height: calc(100% - 40px);
-}
-.double-frame-gallery::before, .double-frame-gallery::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border: 5px solid #987398;
-  border-radius: 2.5px;
-  pointer-events: none;
-  border-width: 5px;
-}
-.double-frame-gallery::before {
-  margin: 0px 20px 0px 20px;
-}
-.double-frame-gallery::after {
-  margin: 20px 0px 20px 0px;
-}
-
-.double-frame-bounded {
-  box-sizing: border-box;
-  position: absolute;
-  text-align: center;
-  z-index: 1;
-  border: 3px solid #957695;
-  width: 100%;
-  height: 100%;
-}
-.double-frame-bounded::before, .double-frame-bounded::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border: 5px solid #987398;
-  border-radius: 2.5px;
-  pointer-events: none;
-  border-width: 5px;
-}
-.double-frame-bounded::before {
-  margin: 0px 20px 0px 20px;
-}
-.double-frame-bounded::after {
-  margin: 20px 0px 20px 0px;
-}
-.double-frame-bounded::before, .double-frame-bounded::after {
-  border-width: 3px;
-  border-radius: 2px;
-}
-.double-frame-bounded::before {
-  margin: 5px 15px 5px 15px;
-}
-.double-frame-bounded::after {
-  margin: 15px 5px 15px 5px;
-}
-
 /*
-This is the double rounded rectangle class. It consists of two
-rounded rectangles, one with a larger radius and thickness than
-the other. There are two main variants, one used in the image
-gallery, and one used for framing photos.
+This overlapping frame class provides us with one of the card
+designs used for the landing page.
 */
-.double-rounded-rectangle-gallery {
-  box-sizing: border-box;
-  width: calc(100% - 40px);
-  height: calc(100% - 40px);
+.overlapping-frame-container {
   position: absolute;
+  background-color: #DCC2DC;
+  border: 5px solid #4D634D;
   text-align: center;
-  z-index: 1;
+  margin: auto;
+  border-radius: 5px;
+  width: 75%;
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 0;
 }
-.double-rounded-rectangle-gallery::before, .double-rounded-rectangle-gallery::after {
+.overlapping-frame-container::before, .overlapping-frame-container::after {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  border: 5px solid #987398;
-  pointer-events: none;
+  background-color: #DCC2DC;
+  border: 5px solid #4D634D;
+  border-radius: 5px;
 }
-.double-rounded-rectangle-gallery::before {
-  border-radius: 30px;
+.overlapping-frame-container::before {
+  margin: calc(2vh - 5px) calc(-2vh - 5px) calc(2vh - 5px) calc(-2vh - 5px);
+  z-index: -20;
 }
-.double-rounded-rectangle-gallery::after {
-  margin: 10px;
-  border-radius: 20px;
-  border-width: 2.5px;
+.overlapping-frame-container::after {
+  margin: calc(4vh - 5px) calc(-4vh - 5px) calc(4vh - 5px) calc(-4vh - 5px);
+  z-index: -30;
 }
 
-.double-rounded-rectangle-frame {
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
+.overlapping-popout-container {
   position: absolute;
+  background-color: #DCC2DC;
+  border: 5px solid #4D634D;
   text-align: center;
-  z-index: 1;
+  border-radius: 5px;
+  margin: auto;
+  width: 80%;
+  height: 80%;
+  position: relative;
+  display: grid;
+  place-items: center;
 }
-.double-rounded-rectangle-frame::before, .double-rounded-rectangle-frame::after {
+.overlapping-popout-container::before {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  border: 5px solid #987398;
-  pointer-events: none;
-}
-.double-rounded-rectangle-frame::before {
-  border-radius: 20px;
-}
-.double-rounded-rectangle-frame::after {
-  margin: 10px;
-  border-radius: 10px;
-  border-width: 2.5px;
-}
-
-.double-rounded-rectangle-crop {
-  border-radius: 20px;
+  background-color: #B09BB0;
+  border: 5px solid #4D634D;
+  border-radius: 5px;
+  margin: -1em 1em 1em -1em;
+  padding: 10px;
+  z-index: -20;
 }
 
 /*
@@ -214,68 +145,139 @@ the edges of the container.
   border-radius: 10px;
 }
 
-/*
-This overlapping frame class provides us with one of the card
-designs used for the landing page.
+/* 
+This is the double frame class. It's design was inspired by a
+poster designed by Isabella Garrison. It has two main variants,
+one used in the image gallery, and one used for framing photos.
 */
-.overlapping-frame-container {
+.double-frame-gallery {
+  box-sizing: border-box;
   position: absolute;
-  background-color: #DCC2DC;
-  border: 5px solid #4D634D;
   text-align: center;
-  margin: auto;
-  border-radius: 5px;
-  width: 80%;
-  position: relative;
-  display: grid;
-  place-items: center;
+  z-index: 1;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
 }
-.overlapping-frame-container::before, .overlapping-frame-container::after {
+.double-frame-gallery::before, .double-frame-gallery::after {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #DCC2DC;
-  border: 5px solid #4D634D;
-  border-radius: 5px;
+  border: 5px solid #987398;
+  border-radius: 2.5px;
+  pointer-events: none;
+  border-width: 5px;
 }
-.overlapping-frame-container::before {
-  margin: calc(7.5% - 5px) calc(-7.5% - 5px) calc(7.5% - 5px) calc(-7.5% - 5px);
-  z-index: -30;
+.double-frame-gallery::before {
+  margin: 0px 20px 0px 20px;
 }
-.overlapping-frame-container::after {
-  margin: calc(3.75% - 5px) calc(-3.75% - 5px) calc(3.75% - 5px) calc(-3.75% - 5px);
-  z-index: -20;
+.double-frame-gallery::after {
+  margin: 20px 0px 20px 0px;
 }
 
-.overlapping-popout-container {
+.double-frame-bounded {
+  box-sizing: border-box;
   position: absolute;
-  background-color: #DCC2DC;
-  border: 5px solid #4D634D;
   text-align: center;
-  border-radius: 5px;
-  margin: auto;
-  width: 80%;
-  height: 80%;
-  position: relative;
-  display: grid;
-  place-items: center;
+  z-index: 1;
+  border: 3px solid #957695;
+  width: 100%;
+  height: 100%;
 }
-.overlapping-popout-container::before {
+.double-frame-bounded::before, .double-frame-bounded::after {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #B09BB0;
-  border: 5px solid #4D634D;
-  border-radius: 5px;
-  margin: -1em 1em 1em -1em;
-  padding: 10px;
-  z-index: -20;
+  border: 5px solid #987398;
+  border-radius: 2.5px;
+  pointer-events: none;
+  border-width: 5px;
+}
+.double-frame-bounded::before {
+  margin: 0px 20px 0px 20px;
+}
+.double-frame-bounded::after {
+  margin: 20px 0px 20px 0px;
+}
+.double-frame-bounded::before, .double-frame-bounded::after {
+  border-width: 3px;
+  border-radius: 2px;
+  z-index: 100;
+}
+.double-frame-bounded::before {
+  margin: 5px 15px 5px 15px;
+}
+.double-frame-bounded::after {
+  margin: 15px 5px 15px 5px;
+}
+
+/*
+This is the double rounded rectangle class. It consists of two
+rounded rectangles, one with a larger radius and thickness than
+the other. There are two main variants, one used in the image
+gallery, and one used for framing photos.
+*/
+.double-rounded-rectangle-gallery {
+  box-sizing: border-box;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+}
+.double-rounded-rectangle-gallery::before, .double-rounded-rectangle-gallery::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 5px solid #987398;
+  pointer-events: none;
+}
+.double-rounded-rectangle-gallery::before {
+  border-radius: 30px;
+}
+.double-rounded-rectangle-gallery::after {
+  margin: 10px;
+  border-radius: 20px;
+  border-width: 2.5px;
+}
+
+.double-rounded-rectangle-frame {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+}
+.double-rounded-rectangle-frame::before, .double-rounded-rectangle-frame::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 5px solid #987398;
+  pointer-events: none;
+}
+.double-rounded-rectangle-frame::before {
+  border-radius: 20px;
+}
+.double-rounded-rectangle-frame::after {
+  margin: 10px;
+  border-radius: 10px;
+  border-width: 2.5px;
+}
+
+.double-rounded-rectangle-crop {
+  border-radius: 20px;
 }
 
 /*
@@ -301,7 +303,8 @@ page and in its custom UI elements.
   filter: brightness(40%) grayscale(80%);
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .landing-gallery-text-container {
@@ -317,12 +320,12 @@ page and in its custom UI elements.
 }
 
 .landing-gallery-page {
-  display: none;
   position: relative;
   align-items: center;
   justify-content: center;
-  height: 77.5vh;
+  height: 83vh;
   flex: 0 0 100vw;
+  display: flex;
 }
 
 .landing-gallery-content {
@@ -331,16 +334,13 @@ page and in its custom UI elements.
   padding-bottom: 7.5px;
 }
 
-.active {
-  display: flex;
-}
-
 .gallery-controller {
   position: absolute;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
+  width: -moz-fit-content;
   width: fit-content;
   left: 0;
   right: 0;
@@ -382,7 +382,8 @@ page and in its custom UI elements.
 }
 
 .grid-image {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 100%;
   width: 100%;
 }
@@ -420,8 +421,9 @@ page and in its custom UI elements.
 }
 
 .card-interior-container {
-  place-items: left;
+  place-items: center;
   padding: 10px;
+  width: 100%;
 }
 
 .card-container {
@@ -465,9 +467,4 @@ page and in its custom UI elements.
 
 a {
   text-decoration: none;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-}/*# sourceMappingURL=Styles.css.map */
+}/*# sourceMappingURL=styles-main.css.map */

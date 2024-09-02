@@ -1,0 +1,81 @@
+/*
+This overlapping frame class provides us with one of the card
+designs used for the landing page.
+*/
+
+// Base mixin used for creating the overlapping frame effect
+@mixin overlapping-frame-square {
+    position: absolute;
+    background-color: #DCC2DC;
+    border: 5px solid #4D634D;
+    text-align: center;
+    margin: auto;
+    border-radius: 5px;
+
+    &::before, &::after {
+        content:'';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #DCC2DC;
+        border: 5px solid #4D634D; 
+        border-radius: 5px; 
+    }
+
+    &::before {
+        margin: calc(2vh - 5px) calc(-2vh - 5px) calc(2vh - 5px) calc(-2vh - 5px);
+        z-index: -20;
+    }
+    &::after {
+        margin: calc(4vh - 5px) calc(-4vh - 5px) calc(4vh - 5px) calc(-4vh - 5px);
+        z-index: -30;
+    }
+}
+
+// Actual class to be called for the overlapping frame effect
+.overlapping-frame-container {
+    @include overlapping-frame-square;
+    
+    width: 75%;
+    position: relative;
+    display: grid;
+    place-items: center;
+    padding: 0;
+}
+
+// Base mixin used for creating the overlapping popout effect
+@mixin overlapping-popout-base {
+    position: absolute;
+    background-color: #DCC2DC;
+    border: 5px solid #4D634D;
+    text-align: center;
+    border-radius: 5px;
+    margin: auto;
+
+    &::before {
+        content:'';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #B09BB0;
+        border: 5px solid #4D634D; 
+        border-radius: 5px; 
+        margin: -1em 1em 1em -1em;
+        padding: 10px;
+        z-index: -20;
+    }
+}
+
+.overlapping-popout-container {
+    @include overlapping-popout-base;
+    
+    width: 80%;
+    height: 80%;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
