@@ -141,17 +141,29 @@ page and in its custom UI elements.
 
 .card-interior-container {
     place-items: center;
-    padding: 10px;
     width: 100%;
+    flex: 1;
 }
 
 .card-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    justify-content: strech;
+    height: 100%;
+    gap: 15px;
 }
 
 .card-image {
-    object-fit: cover;
-    width: 60vw;
+    object-fit: contain;
+    display: flex;
+    flex: 1;
+    max-width: 60%;
+    height: auto;
+}
+
+.card-image-container {
+    display: inline-block;
 }
 
 .force-padding-container {

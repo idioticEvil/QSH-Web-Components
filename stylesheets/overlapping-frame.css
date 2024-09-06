@@ -2,20 +2,18 @@
 This overlapping frame class provides us with one of the card
 designs used for the landing page.
 */
-.overlapping-frame-container {
-  position: absolute;
+.overlapping-frame-square {
   background-color: #DCC2DC;
   border: 5px solid #4D634D;
   text-align: center;
   margin: auto;
   border-radius: 5px;
-  width: 75%;
   position: relative;
-  display: grid;
   place-items: center;
-  padding: 0;
+  display: grid;
+  padding: 10px;
 }
-.overlapping-frame-container::before, .overlapping-frame-container::after {
+.overlapping-frame-square::before, .overlapping-frame-square::after {
   content: "";
   position: absolute;
   top: 0;
@@ -26,13 +24,20 @@ designs used for the landing page.
   border: 5px solid #4D634D;
   border-radius: 5px;
 }
-.overlapping-frame-container::before {
-  margin: calc(2vh - 5px) calc(-2vh - 5px) calc(2vh - 5px) calc(-2vh - 5px);
-  z-index: -20;
+.overlapping-frame-square::before {
+  margin: 15px -20px 15px -20px;
+  z-index: -2;
 }
-.overlapping-frame-container::after {
-  margin: calc(4vh - 5px) calc(-4vh - 5px) calc(4vh - 5px) calc(-4vh - 5px);
-  z-index: -30;
+.overlapping-frame-square::after {
+  margin: 30px -35px 30px -35px;
+  z-index: -3;
+}
+
+.overlapping-frame-container {
+  margin: 0px 30px 0px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .overlapping-popout-container {
