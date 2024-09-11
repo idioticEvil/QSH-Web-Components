@@ -153,17 +153,37 @@ page and in its custom UI elements.
   gap: 15px;
 }
 
-.card-image {
-  -o-object-fit: contain;
-     object-fit: contain;
-  display: flex;
-  flex: 1;
-  max-width: 60%;
+.sbs-image {
+  display: block;
+  max-width: 100%;
   height: auto;
+  margin: 0 auto;
+}
+
+.card-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #4d634d;
 }
 
 .card-image-container {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: auto;
+  width: auto;
+  transform: scale(0.7);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.card-image-container:hover {
+  transform: scale(0.75);
 }
 
 .force-padding-container {
