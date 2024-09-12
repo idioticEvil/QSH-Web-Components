@@ -9,6 +9,22 @@ page and in its custom UI elements.
   margin: 0;
 }
 
+.navbar-white-text {
+  font-family: "Yeseva One", serif;
+  color: white;
+  margin: auto;
+  font-size: 20px;
+  text-decoration: none;
+}
+.navbar-white-text:hover {
+  text-decoration: underline;
+}
+.navbar-white-text:focus {
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+
 .white-paragraph-text {
   font-family: "Caudex", serif;
   color: white;
@@ -196,14 +212,16 @@ page and in its custom UI elements.
   padding: 10px;
   text-decoration: none;
   border: none;
-  background-color: #4d634d;
+  background-color: #847484;
   font-family: "Caudex", serif;
   font-style: italic;
   font-size: 1.2em;
   color: white;
+  position: relative;
+  z-index: 3;
 }
 .card-button:hover {
-  background-color: #7a8a7a;
+  background-color: #ac97ac;
 }
 
 .gallery-button {

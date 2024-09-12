@@ -7,7 +7,6 @@ one used in the image gallery, and one used for framing photos.
 // Double Frame Mixin used for creating the double frame effect
 @mixin double-frame {
     box-sizing: border-box; 
-    position: relative;
     text-align: center;
     z-index: 1;
 
@@ -36,6 +35,7 @@ one used in the image gallery, and one used for framing photos.
 // Version of the Double Frame class used in the image gallery
 .double-frame-gallery {
     @include double-frame;
+    position: absolute;
     width: calc(100% - 40px);
     height: calc(100% - 40px); 
 }
@@ -44,6 +44,7 @@ one used in the image gallery, and one used for framing photos.
 .double-frame-bounded {
     @include double-frame;
     border: 4px solid #957695;
+    position: relative;
     width: auto;
     display: inline-block;
     
