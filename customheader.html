@@ -20,31 +20,44 @@
                 <h2 class=" d-inline-block align-top white-header-text">Queer Southern<br/>History</h2>
           </a>
 
-          <button class="navbar-toggler" id="toggle-button" type="button" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        
-          <div class="collapse navbar-collapse" id="toggle-element">
-                <div class="navbar-nav ms-auto">
-                      <a class="nav-link p-2 d-inline-block align-top" href="https://theclio.com/tour/2676">
-                        <p class="white-paragraph-text">Walking Tour</p>
-                      </a>
-                       <a class="nav-link p-2 d-inline-block align-top" href="#">
-                        <p class="white-paragraph-text">Oral Histories</p> 
-                      </a>
-                       <a class=" nav-link p-2 d-inline-block align-top" href="#">
-                        <p class="white-paragraph-text">About Us</p> 
-                      </a>
-                </div>
-          </div>
+                  <button id="icon" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <!-- this is the icon info-->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                    </svg>
+                  </button>
+
+                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav ms-auto">
+                              <p class="navbar-white-text p-2" href="#">
+                                <a class="navbar-white-text">Walking Tour</a> 
+                              </p>
+                              <p class="navbar-white-text p-2" href="#">
+                                <a class="navbar-white-text">Oral Histories</a> 
+                              </p>
+                              <p class="navbar-white-text p-2" href="#">
+                                <a class="navbar-white-text">About Us</a> 
+                              </p>
+                        </div>
+                  </div>
       </nav>
   <script>
      document.getElementById('toggle-button').addEventListener('click', function() {
       var element = document.getElementById('toggle-element');
       if (window.getComputedStyle(element).display === 'none') {
+        //if closed
           element.style.display = 'block';
+          icon.classList.remove('bi-chevron-down');
+          icon.classList.add('bi-chevron-up');
+          icon.setAttribute('d', 'M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z');
       } else {
+        //if open
           element.style.display = 'none';
+          icon.classList.remove('bi-chevron-up');
+          icon.classList.add('bi-chevron-down');
+          icon.setAttribute('d', 'M4.646 11.854a.5.5 0 0 1 .708 0l6-6a.5.5 0 0 1-.708-.708L8 10.293 4.646 6.646a.5.5 0 0 1 .708-.708z');
+
+          
       }
   });
   </script>
