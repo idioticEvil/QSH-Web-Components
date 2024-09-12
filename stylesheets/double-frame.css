@@ -106,9 +106,11 @@ gallery, and one used for framing photos.
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: relative;
   text-align: center;
   z-index: 1;
+  width: auto;
+  display: inline-block;
 }
 .double-rounded-rectangle-frame::before, .double-rounded-rectangle-frame::after {
   content: "";
@@ -128,7 +130,6 @@ gallery, and one used for framing photos.
   border-radius: 10px;
   border-width: 2.5px;
 }
-
-.double-rounded-rectangle-crop {
+.double-rounded-rectangle-frame img {
   border-radius: 20px;
 }/*# sourceMappingURL=double-frame.css.map */

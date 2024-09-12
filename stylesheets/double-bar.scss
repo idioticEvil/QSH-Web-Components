@@ -6,11 +6,10 @@ the edges of the container.
 // Base mixin used for creating the double bar effect
 @mixin double-bar-base {
     position: relative;
-    display: grid;
+    display: inline-block;
     place-items: center;
     text-align: center;
     border-radius: 10px;
-    padding: 15px;
 
     &::before, &::after {
         content: '';
@@ -28,13 +27,12 @@ the edges of the container.
 .double-bar-card {
     @include double-bar-base;
     
-    width: 80%;
     position: relative;
     display: grid;
     place-items: center;
-    margin: auto;
     background-color: #DCC2DC;
     border: 5px solid #4D634D;
+    padding: 25px;
 
     &::before, &::after {
         border: 5px solid #4D634D;
@@ -59,7 +57,7 @@ the edges of the container.
     box-sizing: border-box; 
     width: 100%;
     height: 100%; 
-    position: absolute;
+    position: relative;
     text-align: center;
     z-index: 1;
 
@@ -78,9 +76,8 @@ the edges of the container.
         margin: 10px -4px 10px -4px;
         z-index: 2;
     }
-}
 
-// Random side-class used for cropping images to rounded corners
-.double-bar-crop {
-    border-radius: 10px;
+    img {
+        border-radius: 5px;
+    }
 }

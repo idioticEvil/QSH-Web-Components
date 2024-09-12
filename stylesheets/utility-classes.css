@@ -142,6 +142,8 @@ page and in its custom UI elements.
   color: black;
   text-align: left;
   margin: 0px;
+  z-index: 4;
+  position: relative;
   font-family: "Yeseva One", serif;
   padding: 0px 0px 5px 0px;
 }
@@ -150,6 +152,8 @@ page and in its custom UI elements.
   color: black;
   text-align: left;
   margin: 0px;
+  z-index: 4;
+  position: relative;
   font-family: "Caudex", serif;
   padding: 0px 0px 5px 0px;
 }
@@ -194,12 +198,13 @@ page and in its custom UI elements.
   position: relative;
   height: auto;
   width: auto;
-  transform: scale(0.7);
   transform-origin: center;
   transition: transform 0.3s ease;
+  will-change: transform;
+  margin: 0px 10vw 0 10vw;
 }
 .card-image-container:hover {
-  transform: scale(0.75);
+  transform: scale(1.05);
 }
 
 .force-padding-container {

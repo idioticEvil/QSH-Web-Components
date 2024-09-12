@@ -143,6 +143,8 @@ page and in its custom UI elements.
     color: black;
     text-align: left;
     margin: 0px;
+    z-index: 4;
+    position: relative;
 }
 
 .card-header-text {
@@ -197,12 +199,13 @@ page and in its custom UI elements.
     position: relative;
     height: auto;
     width: auto;
-    transform: scale(0.7); 
     transform-origin: center; 
     transition: transform 0.3s ease;
+    will-change: transform;
+    margin: 0px 10vw 0 10vw;
 
     &:hover {
-        transform: scale(0.75); 
+        transform: scale(1.05); 
     }
 }
 
