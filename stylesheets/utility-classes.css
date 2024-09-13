@@ -2,6 +2,13 @@
 The following are utility classes that are used across the landing
 page and in its custom UI elements.
 */
+.banner-logo {
+  border-radius: 10px;
+  border-style: solid;
+  border-color: black;
+  border-width: 5px;
+}
+
 .white-header-text {
   font-family: "Yeseva One", serif;
   color: white;
@@ -60,12 +67,6 @@ page and in its custom UI elements.
   height: 83vh;
   flex: 0 0 100vw;
   display: flex;
-}
-
-.landing-gallery-content {
-  display: flex;
-  width: 100vw;
-  padding-bottom: 7.5px;
 }
 
 .gallery-controller {
@@ -198,6 +199,7 @@ page and in its custom UI elements.
   position: relative;
   height: auto;
   width: auto;
+  max-width: 50%;
   transform-origin: center;
   transition: transform 0.3s ease;
   will-change: transform;
@@ -208,7 +210,8 @@ page and in its custom UI elements.
 }
 
 .force-padding-container {
-  padding: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 /* Mixin for any buttons we want to add to the bottom of any tag*/
@@ -246,4 +249,9 @@ page and in its custom UI elements.
 
 a {
   text-decoration: none;
+}
+
+body {
+  overflow-y: auto;
+  scrollbar-gutter: stable;
 }/*# sourceMappingURL=utility-classes.css.map */
