@@ -1,0 +1,28 @@
+/* these are all of the individual styling files I'm using to make the omeka pages */
+
+/* image-container for divs, image-decoration for imgs */
+.image-container{
+    max-height:100%;
+    max-width:100%;
+    text-align:center !important;
+}
+.image-decoration{
+    width:60% !important;
+    height:60% !important;
+    border: 5px solid #987398;
+    border-radius:10px;
+    object-fit:cover;
+}
+
+/* used as a replacement to the page title block */
+.page-title{
+    color: #987398;
+    font-family: "Yeseva One", serif;
+    font-weight:bold;
+}
+
+/* really just replaces the font */
+.custom-omeka-text{
+    font-family: "Yeseva One", serif;
+    font-size: 20px;
+  }
