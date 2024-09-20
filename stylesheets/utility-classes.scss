@@ -70,52 +70,6 @@ page and in its custom UI elements.
     display: flex;
 }
 
-.gallery-controller {
-    position: absolute;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
-    width: fit-content;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    background-color: #DCC2DC;
-    border-radius: 50px;
-    border-color: #4d634d;
-    border-style: solid;
-    border-width: 2px;
-}
-
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0.375rem;
-    border-color: transparent;
-    background-color: #4d634d;
-    border-radius: 100px;
-    transition: background-color 0.6s ease;
-    display: inline-block;
-    padding: 0;
-}
-
-.back, .forward {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: #4d634d;
-    border-color: transparent;
-    background-color: transparent;
-    font-size: 18px;
-    line-height: 0%;
-    margin: 0rem 0.375rem;
-    font-weight: normal;
-    border-width: 0;
-    padding: 0;
-}
-
 .grid-image {
     object-fit: cover;
     height: 100%;
@@ -175,16 +129,15 @@ page and in its custom UI elements.
 }
 
 .sbs-image {
-    display: block;
+    display: flex;
     max-width: 100%; 
     height: auto;
     margin: 0 auto;
-    
 }
 
 .card-image {
     display: block;
-    max-width: 100%; 
+    max-width: 50%; 
     height: auto;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -194,13 +147,9 @@ page and in its custom UI elements.
 }
 
 .card-image-container {
-    display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    height: auto;
-    width: auto;
-    max-width: 50%;
     transform-origin: center; 
     transition: transform 0.3s ease;
     will-change: transform;
@@ -260,4 +209,3 @@ body {
     overflow-y: auto;
     scrollbar-gutter: stable;
 }
-

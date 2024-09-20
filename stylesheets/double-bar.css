@@ -1,18 +1,15 @@
 /*
 This is the double bar class. It consists of two bars pushed out to
-the edges of the container. 
+the edges of the container.
 */
 .double-bar-card {
   position: relative;
-  display: inline-block;
-  place-items: center;
   text-align: center;
   border-radius: 10px;
-  position: relative;
+  border: 5px solid #4D634D;
   display: grid;
   place-items: center;
   background-color: #DCC2DC;
-  border: 5px solid #4D634D;
   padding: 25px;
 }
 .double-bar-card::before, .double-bar-card::after {
@@ -23,9 +20,6 @@ the edges of the container.
   left: 0;
   right: 0;
   background-color: transparent;
-  border-radius: 0px;
-}
-.double-bar-card::before, .double-bar-card::after {
   border: 5px solid #4D634D;
 }
 .double-bar-card::before {
@@ -39,17 +33,14 @@ the edges of the container.
 
 .double-bar-frame {
   position: relative;
-  display: inline-block;
-  place-items: center;
   text-align: center;
   border-radius: 10px;
+  border: 4px solid #987398;
+  display: inline-block;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  position: relative;
-  text-align: center;
   z-index: 1;
-  border: 4px solid #987398;
 }
 .double-bar-frame::before, .double-bar-frame::after {
   content: "";
@@ -59,9 +50,6 @@ the edges of the container.
   left: 0;
   right: 0;
   background-color: transparent;
-  border-radius: 0px;
-}
-.double-bar-frame::before, .double-bar-frame::after {
   border: 4px solid #987398;
 }
 .double-bar-frame::before {

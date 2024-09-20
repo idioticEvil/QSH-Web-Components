@@ -1,20 +1,20 @@
 /*
-This overlapping frame class provides us with one of the card
-designs used for the landing page.
+This code defines mixins and classes for overlapping frame and popout effects
+used in the landing page card designs.
 */
-.overlapping-frame-square {
+.overlapping-frame-container {
   background-color: #DCC2DC;
   border: 5px solid #4D634D;
   text-align: center;
   margin: auto;
   border-radius: 5px;
   position: relative;
-  place-items: center;
   display: grid;
+  place-items: center;
   padding: 10px;
   width: calc(100% - 60px);
 }
-.overlapping-frame-square::before, .overlapping-frame-square::after {
+.overlapping-frame-container::before {
   content: "";
   position: absolute;
   top: 0;
@@ -24,23 +24,28 @@ designs used for the landing page.
   background-color: #DCC2DC;
   border: 5px solid #4D634D;
   border-radius: 5px;
-}
-.overlapping-frame-square::before {
   margin: 15px -20px 15px -20px;
   z-index: -2;
 }
-.overlapping-frame-square::after {
+.overlapping-frame-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #DCC2DC;
+  border: 5px solid #4D634D;
+  border-radius: 5px;
   margin: 30px -35px 30px -35px;
   z-index: -3;
 }
 
 .overlapping-popout-container {
-  position: absolute;
   background-color: #DCC2DC;
   border: 5px solid #4D634D;
   text-align: center;
   border-radius: 5px;
-  margin: auto;
   position: relative;
   display: grid;
   place-items: center;

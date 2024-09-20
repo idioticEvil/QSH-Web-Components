@@ -1,77 +1,96 @@
 /*
-This overlapping frame class provides us with one of the card
-designs used for the landing page.
+This code defines mixins and classes for overlapping frame and popout effects
+used in the landing page card designs.
 */
 
-// Base mixin used for creating the overlapping frame effect
-.overlapping-frame-square {
-    background-color: #DCC2DC;
-    border: 5px solid #4D634D;
+// Mixin for the overlapping frame effect
+@mixin overlapping-frame($bg-color, $border-color, $border-width, $border-radius, $pseudo-margins, $pseudo-z-indexes, $padding, $width) {
+    background-color: $bg-color;
+    border: $border-width solid $border-color;
     text-align: center;
     margin: auto;
-    border-radius: 5px;
+    border-radius: $border-radius;
     position: relative;
-    place-items: center;
     display: grid;
-    padding: 10px;
-    width: calc(100% - 60px);
+    place-items: center;
+    padding: $padding;
+    width: $width;
 
-    &::before, &::after {
-        content:'';
+    $pseudo-count: length($pseudo-margins);
+
+    @for $i from 1 through $pseudo-count {
+        $margin: nth($pseudo-margins, $i);
+        $z-index: nth($pseudo-z-indexes, $i);
+        $pseudo-element: if($i == 1, '::before', '::after');
+
+        &#{$pseudo-element} {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: $bg-color;
+            border: $border-width solid $border-color;
+            border-radius: $border-radius;
+            margin: $margin;
+            z-index: $z-index;
+        }
+    }
+}
+
+// Mixin for the overlapping popout effect
+@mixin overlapping-popout($bg-color, $border-color, $border-width, $border-radius, $pseudo-bg-color, $pseudo-margin, $pseudo-z-index, $padding, $margin) {
+    background-color: $bg-color;
+    border: $border-width solid $border-color;
+    text-align: center;
+    border-radius: $border-radius;
+    position: relative;
+    display: grid;
+    place-items: center;
+    padding: $padding;
+    margin: $margin;
+
+    &::before {
+        content: '';
         position: absolute;
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: #DCC2DC;
-        border: 5px solid #4D634D; 
-        border-radius: 5px; 
-    }
-
-    &::before {
-        margin: 15px -20px 15px -20px;
-        z-index: -2;
-    }
-    &::after {
-        margin: 30px -35px 30px -35px;
-        z-index: -3;
+        background-color: $pseudo-bg-color;
+        border: $border-width solid $border-color;
+        border-radius: $border-radius;
+        margin: $pseudo-margin;
+        z-index: $pseudo-z-index;
     }
 }
 
+// Class for the overlapping frame effect
 .overlapping-frame-container {
-    
+    @include overlapping-frame(
+        #DCC2DC,                      // $bg-color
+        #4D634D,                      // $border-color
+        5px,                          // $border-width
+        5px,                          // $border-radius
+        (15px -20px 15px -20px, 30px -35px 30px -35px),  // $pseudo-margins
+        (-2, -3),                     // $pseudo-z-indexes
+        10px,                         // $padding
+        calc(100% - 60px)             // $width
+    );
 }
 
-// Base mixin used for creating the overlapping popout effect
-@mixin overlapping-popout-base {
-    position: absolute;
-    background-color: #DCC2DC;
-    border: 5px solid #4D634D;
-    text-align: center;
-    border-radius: 5px;
-    margin: auto;
-
-    &::before {
-        content:'';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-color: #B09BB0;
-        border: 5px solid #4D634D; 
-        border-radius: 5px; 
-        margin: -20px 20px 20px -20px;
-        z-index: -20;
-    }
-}
-
+// Class for the overlapping popout effect
 .overlapping-popout-container {
-    @include overlapping-popout-base;
-    
-    position: relative;
-    display: grid;
-    place-items: center;
-    padding: 10px;
-    margin: 15px 0 0 15px;
+    @include overlapping-popout(
+        #DCC2DC,                      // $bg-color
+        #4D634D,                      // $border-color
+        5px,                          // $border-width
+        5px,                          // $border-radius
+        #B09BB0,                      // $pseudo-bg-color
+        -20px 20px 20px -20px,        // $pseudo-margin
+        -20,                          // $pseudo-z-index
+        10px,                         // $padding
+        15px 0 0 15px                 // $margin
+    );
 }
