@@ -3,10 +3,7 @@ The following are utility classes that are used across the landing
 page and in its custom UI elements.
 */
 .banner-logo {
-  border-radius: 10px;
-  border-style: solid;
-  border-color: black;
-  border-width: 5px;
+  border-radius: 20px;
 }
 
 .white-header-text {
@@ -64,7 +61,7 @@ page and in its custom UI elements.
   position: relative;
   align-items: center;
   justify-content: center;
-  height: 83vh;
+  height: var(--app-height);
   flex: 0 0 100vw;
   display: flex;
 }
@@ -136,7 +133,8 @@ page and in its custom UI elements.
 
 .card-image {
   display: block;
-  max-width: 50%;
+  position: relative;
+  max-width: 100%;
   height: auto;
   margin-bottom: 10px;
   border-radius: 10px;
@@ -148,7 +146,6 @@ page and in its custom UI elements.
 .card-image-container {
   justify-content: center;
   align-items: center;
-  position: relative;
   transform-origin: center;
   transition: transform 0.3s ease;
   will-change: transform;

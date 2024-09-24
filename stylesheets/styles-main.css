@@ -1,20 +1,20 @@
 /*
-This overlapping frame class provides us with one of the card
-designs used for the landing page.
+This code defines mixins and classes for overlapping frame and popout effects
+used in the landing page card designs.
 */
-.overlapping-frame-square {
+.overlapping-frame-container {
   background-color: #DCC2DC;
   border: 5px solid #4D634D;
   text-align: center;
   margin: auto;
   border-radius: 5px;
   position: relative;
-  place-items: center;
   display: grid;
+  place-items: center;
   padding: 10px;
-  width: calc(100% - 60px);
+  max-width: calc(100% - 60px);
 }
-.overlapping-frame-square::before, .overlapping-frame-square::after {
+.overlapping-frame-container::before {
   content: "";
   position: absolute;
   top: 0;
@@ -24,23 +24,28 @@ designs used for the landing page.
   background-color: #DCC2DC;
   border: 5px solid #4D634D;
   border-radius: 5px;
-}
-.overlapping-frame-square::before {
   margin: 15px -20px 15px -20px;
   z-index: -2;
 }
-.overlapping-frame-square::after {
+.overlapping-frame-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #DCC2DC;
+  border: 5px solid #4D634D;
+  border-radius: 5px;
   margin: 30px -35px 30px -35px;
   z-index: -3;
 }
 
 .overlapping-popout-container {
-  position: absolute;
   background-color: #DCC2DC;
   border: 5px solid #4D634D;
   text-align: center;
   border-radius: 5px;
-  margin: auto;
   position: relative;
   display: grid;
   place-items: center;
@@ -63,19 +68,16 @@ designs used for the landing page.
 
 /*
 This is the double bar class. It consists of two bars pushed out to
-the edges of the container. 
+the edges of the container.
 */
 .double-bar-card {
   position: relative;
-  display: inline-block;
-  place-items: center;
   text-align: center;
   border-radius: 10px;
-  position: relative;
+  border: 5px solid #4D634D;
   display: grid;
   place-items: center;
   background-color: #DCC2DC;
-  border: 5px solid #4D634D;
   padding: 25px;
 }
 .double-bar-card::before, .double-bar-card::after {
@@ -86,9 +88,6 @@ the edges of the container.
   left: 0;
   right: 0;
   background-color: transparent;
-  border-radius: 0px;
-}
-.double-bar-card::before, .double-bar-card::after {
   border: 5px solid #4D634D;
 }
 .double-bar-card::before {
@@ -102,17 +101,13 @@ the edges of the container.
 
 .double-bar-frame {
   position: relative;
-  display: inline-block;
-  place-items: center;
   text-align: center;
   border-radius: 10px;
+  border: 4px solid #987398;
+  display: inline-block;
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
-  position: relative;
-  text-align: center;
   z-index: 1;
-  border: 4px solid #987398;
 }
 .double-bar-frame::before, .double-bar-frame::after {
   content: "";
@@ -122,9 +117,6 @@ the edges of the container.
   left: 0;
   right: 0;
   background-color: transparent;
-  border-radius: 0px;
-}
-.double-bar-frame::before, .double-bar-frame::after {
   border: 4px solid #987398;
 }
 .double-bar-frame::before {
@@ -140,17 +132,19 @@ the edges of the container.
 }
 
 /* 
-This is the double frame class. It's design was inspired by a
-poster designed by Isabella Garrison. It has two main variants,
-one used in the image gallery, and one used for framing photos.
+Double Frame Mixin: Used to create the double frame effect with customizable parameters.
+*/
+/* 
+Double Frame Gallery Class: Uses the double frame mixin with default parameters.
 */
 .double-frame-gallery {
   box-sizing: border-box;
   text-align: center;
   z-index: 1;
-  position: absolute;
+  position: relative;
   width: calc(100% - 40px);
   height: calc(100% - 40px);
+  position: absolute;
 }
 .double-frame-gallery::before, .double-frame-gallery::after {
   content: "";
@@ -162,21 +156,23 @@ one used in the image gallery, and one used for framing photos.
   border: 5px solid #987398;
   border-radius: 2.5px;
   pointer-events: none;
-  border-width: 5px;
 }
 .double-frame-gallery::before {
-  margin: 0px 20px 0px 20px;
+  margin: 0px 20px;
 }
 .double-frame-gallery::after {
-  margin: 20px 0px 20px 0px;
+  margin: 20px 0px;
 }
 
+/* 
+Double Frame Bounded Class: Uses the double frame mixin with customized parameters.
+*/
 .double-frame-bounded {
   box-sizing: border-box;
   text-align: center;
   z-index: 1;
-  border: 4px solid #957695;
   position: relative;
+  border: 4px solid #957695;
   width: auto;
   display: inline-block;
 }
@@ -187,36 +183,25 @@ one used in the image gallery, and one used for framing photos.
   bottom: 0;
   left: 0;
   right: 0;
-  border: 5px solid #987398;
-  border-radius: 2.5px;
-  pointer-events: none;
-  border-width: 5px;
-}
-.double-frame-bounded::before {
-  margin: 0px 20px 0px 20px;
-}
-.double-frame-bounded::after {
-  margin: 20px 0px 20px 0px;
-}
-.double-frame-bounded::before, .double-frame-bounded::after {
-  border-width: 4px;
+  border: 4px solid #957695;
   border-radius: 2px;
-  z-index: 3;
+  pointer-events: none;
 }
 .double-frame-bounded::before {
-  margin: 5px 15px 5px 15px;
+  margin: 5px 15px;
 }
 .double-frame-bounded::after {
-  margin: 15px 5px 15px 5px;
+  margin: 15px 5px;
 }
 
-/*
-This is the double rounded rectangle class. It consists of two
-rounded rectangles, one with a larger radius and thickness than
-the other. There are two main variants, one used in the image
-gallery, and one used for framing photos.
+/* 
+Double Rounded Rectangle Mixin: Creates the double rounded rectangle effect with customizable parameters.
+*/
+/* 
+Double Rounded Rectangle Gallery Class: Uses the mixin with default parameters.
 */
 .double-rounded-rectangle-gallery {
+  position: relative;
   box-sizing: border-box;
   width: calc(100% - 40px);
   height: calc(100% - 40px);
@@ -243,10 +228,12 @@ gallery, and one used for framing photos.
   border-width: 2.5px;
 }
 
+/* 
+Double Rounded Rectangle Frame Class: Uses the mixin with customized parameters.
+*/
 .double-rounded-rectangle-frame {
+  position: relative;
   box-sizing: border-box;
-  width: 100%;
-  height: 100%;
   position: relative;
   text-align: center;
   z-index: 1;
@@ -280,10 +267,7 @@ The following are utility classes that are used across the landing
 page and in its custom UI elements.
 */
 .banner-logo {
-  border-radius: 10px;
-  border-style: solid;
-  border-color: black;
-  border-width: 5px;
+  border-radius: 20px;
 }
 
 .white-header-text {
@@ -346,53 +330,6 @@ page and in its custom UI elements.
   display: flex;
 }
 
-.gallery-controller {
-  position: absolute;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  text-align: center;
-  width: -moz-fit-content;
-  width: fit-content;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  background-color: #DCC2DC;
-  border-radius: 50px;
-  border-color: #4d634d;
-  border-style: solid;
-  border-width: 2px;
-}
-
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0.375rem;
-  border-color: transparent;
-  background-color: #4d634d;
-  border-radius: 100px;
-  transition: background-color 0.6s ease;
-  display: inline-block;
-  padding: 0;
-}
-
-.back, .forward {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: #4d634d;
-  border-color: transparent;
-  background-color: transparent;
-  font-size: 18px;
-  line-height: 0%;
-  margin: 0rem 0.375rem;
-  font-weight: normal;
-  border-width: 0;
-  padding: 0;
-}
-
 .grid-image {
   -o-object-fit: cover;
      object-fit: cover;
@@ -452,7 +389,7 @@ page and in its custom UI elements.
 }
 
 .sbs-image {
-  display: block;
+  display: flex;
   max-width: 100%;
   height: auto;
   margin: 0 auto;
@@ -460,6 +397,7 @@ page and in its custom UI elements.
 
 .card-image {
   display: block;
+  position: relative;
   max-width: 100%;
   height: auto;
   margin-bottom: 10px;
@@ -470,13 +408,8 @@ page and in its custom UI elements.
 }
 
 .card-image-container {
-  display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  height: auto;
-  width: auto;
-  max-width: 50%;
   transform-origin: center;
   transition: transform 0.3s ease;
   will-change: transform;
@@ -531,18 +464,4 @@ a {
 body {
   overflow-y: auto;
   scrollbar-gutter: stable;
-}
-
-.row {
-  display: flex;
-  align-items: stretch;
-}
-
-.col-sm {
-  display: flex;
-  flex-direction: column;
-}
-
-.card-interior-container {
-  flex: 1;
 }/*# sourceMappingURL=styles-main.css.map */
