@@ -300,6 +300,13 @@ page and in its custom UI elements.
   margin: 0;
 }
 
+.black-paragraph-text {
+  font-family: "Caudex", serif;
+  color: black;
+  padding-bottom: 10px;
+  margin: 0;
+}
+
 .landing-gallery-image-transform {
   position: relative;
   filter: brightness(40%) grayscale(80%);
@@ -325,7 +332,7 @@ page and in its custom UI elements.
   position: relative;
   align-items: center;
   justify-content: center;
-  height: 83vh;
+  height: var(--app-height);
   flex: 0 0 100vw;
   display: flex;
 }

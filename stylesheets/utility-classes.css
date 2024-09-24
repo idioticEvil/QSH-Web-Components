@@ -36,6 +36,13 @@ page and in its custom UI elements.
   margin: 0;
 }
 
+.black-paragraph-text {
+  font-family: "Caudex", serif;
+  color: black;
+  padding-bottom: 10px;
+  margin: 0;
+}
+
 .landing-gallery-image-transform {
   position: relative;
   filter: brightness(40%) grayscale(80%);
