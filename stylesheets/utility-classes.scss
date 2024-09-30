@@ -3,14 +3,27 @@ The following are utility classes that are used across the landing
 page and in its custom UI elements.
 */
 .banner-logo {
-    border-radius: 20px;
+    border-radius: 15px;
 }
 
 .white-header-text {
     font-family: "Yeseva One", serif;
     color: white;
-    padding-bottom: 5px;
     margin: 0;
+    text-decoration: none;
+}
+
+.white-landing-text {
+    font-family: "Yeseva One", serif;
+    color: white;
+    margin: 0;
+    text-decoration: none;
+    font-size: 10vw;
+}
+
+.star-transform {
+    color: #926192;
+    font-size: 7vw;
 }
 
 .navbar-white-text {
@@ -47,7 +60,7 @@ page and in its custom UI elements.
 
 .landing-gallery-image-transform {
     position: relative;
-    filter: brightness(40%) grayscale(80%);
+    filter: brightness(50%) grayscale(50%);
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -69,7 +82,7 @@ page and in its custom UI elements.
     position: relative;
     align-items: center;
     justify-content: center;
-    height: var(--app-height);
+    height: calc(var(--app-height) * 0.864);
     flex: 0 0 100vw;
     display: flex;
 }

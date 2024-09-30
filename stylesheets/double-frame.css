@@ -1,5 +1,6 @@
 /* 
 Double Frame Mixin: Used to create the double frame effect with customizable parameters.
+NOTE: OUR OLD COLOR WAS #987398, NEW COLOR IS #926192
 */
 /* 
 Double Frame Gallery Class: Uses the double frame mixin with default parameters.
@@ -20,7 +21,7 @@ Double Frame Gallery Class: Uses the double frame mixin with default parameters.
   bottom: 0;
   left: 0;
   right: 0;
-  border: 5px solid #987398;
+  border: 5px solid #926192;
   border-radius: 2.5px;
   pointer-events: none;
 }
@@ -39,7 +40,7 @@ Double Frame Bounded Class: Uses the double frame mixin with customized paramete
   text-align: center;
   z-index: 1;
   position: relative;
-  border: 4px solid #957695;
+  border: 4px solid #926192;
   width: auto;
   display: inline-block;
 }
@@ -50,7 +51,7 @@ Double Frame Bounded Class: Uses the double frame mixin with customized paramete
   bottom: 0;
   left: 0;
   right: 0;
-  border: 4px solid #957695;
+  border: 4px solid #926192;
   border-radius: 2px;
   pointer-events: none;
 }
@@ -83,7 +84,7 @@ Double Rounded Rectangle Gallery Class: Uses the mixin with default parameters.
   bottom: 0;
   left: 0;
   right: 0;
-  border: 5px solid #987398;
+  border: 5px solid #926192;
   pointer-events: none;
 }
 .double-rounded-rectangle-gallery::before {
@@ -114,7 +115,7 @@ Double Rounded Rectangle Frame Class: Uses the mixin with customized parameters.
   bottom: 0;
   left: 0;
   right: 0;
-  border: 5px solid #987398;
+  border: 5px solid #926192;
   pointer-events: none;
 }
 .double-rounded-rectangle-frame::before {
