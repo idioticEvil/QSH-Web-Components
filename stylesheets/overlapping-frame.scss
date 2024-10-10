@@ -14,7 +14,7 @@ used in the landing page card designs.
     display: grid;
     place-items: center;
     padding: $padding;
-    width: $width;
+    max-width: $width;
 
     $pseudo-count: length($pseudo-margins);
 
