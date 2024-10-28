@@ -6,4 +6,4 @@ This repository contains custom web elements used to construct the website for t
 We need to figure this out
 
 ## Other Information
-We should probably make a section telling more about the project and the Summersell Center, maybe plug ourselves too? IDK
+Detailed documentation for this project can be found at: https://docs.google.com/document/d/1kQoszp9Z1QHK83ice45hjqujK7hj4g5kuU73eEk0x5k/edit?usp=sharing
