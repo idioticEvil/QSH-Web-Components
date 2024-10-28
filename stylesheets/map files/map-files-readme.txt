@@ -1,1 +1,1 @@
-All of these files are compiler-created and connect the scss modules and css classes
+All of these files are compiler-created and connect the scss mixins and css classes

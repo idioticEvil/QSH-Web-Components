@@ -71,12 +71,12 @@ used in the landing page card designs.
     @include overlapping-frame(
         #DCC2DC,                      // $bg-color
         #4D634D,                      // $border-color
-        5px,                          // $border-width
-        5px,                          // $border-radius
+        5px,                            // $border-width
+        5px,                            // $border-radius
         (15px -20px 15px -20px, 30px -35px 30px -35px),  // $pseudo-margins
-        (-2, -3),                     // $pseudo-z-indexes
-        10px,                         // $padding
-        calc(100% - 60px)             // $width
+        (-2, -3),                       // $pseudo-z-indexes
+        10px,                           // $padding
+        calc(100% - 60px)               // $width
     );
 }
 
@@ -85,12 +85,12 @@ used in the landing page card designs.
     @include overlapping-popout(
         #DCC2DC,                      // $bg-color
         #4D634D,                      // $border-color
-        5px,                          // $border-width
-        5px,                          // $border-radius
+        5px,                            // $border-width
+        5px,                            // $border-radius
         #B09BB0,                      // $pseudo-bg-color
-        -20px 20px 20px -20px,        // $pseudo-margin
-        -20,                          // $pseudo-z-index
-        10px,                         // $padding
-        15px 0 0 15px                 // $margin
+        -20px 20px 20px -20px,          // $pseudo-margin
+        -20,                            // $pseudo-z-index
+        10px,                           // $padding
+        15px 0 0 15px                   // $margin
     );
 }
