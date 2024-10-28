@@ -4,7 +4,7 @@ the edges of the container.
 */
 
 // Base mixin used for creating the double bar effect with parameters
-@mixin double-bar-base($border-size, $border-color, $border-radius: 0) {
+@mixin double-bar-base($border-size, $border-color, $border-radius) {
     position: relative;
     text-align: center;
     border-radius: $border-radius;
