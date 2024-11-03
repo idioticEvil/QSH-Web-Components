@@ -20,13 +20,9 @@
       if (window.getComputedStyle(element).display === 'none') {
         // if closed
         element.style.display = 'block';
-        icon.classList.remove('bi-chevron-down');
-        icon.classList.add('bi-chevron-up');
       } else {
         // if open
         element.style.display = 'none';
-        icon.classList.remove('bi-chevron-up');
-        icon.classList.add('bi-chevron-down');
       }
     });
   </script>
