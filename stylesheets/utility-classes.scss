@@ -131,9 +131,9 @@ page and in its custom UI elements.
 }
 
 .card-interior-container {
-    place-items: center;
+    place-items: left;
     width: 100%;
-    flex: 1;
+    flex: 1; 
 }
 
 .card-container {
